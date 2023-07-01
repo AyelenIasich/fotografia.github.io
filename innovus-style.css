@@ -284,4 +284,77 @@ li{
 
 
 
+.sitcky-card{
 
+    background:var(--bg-banner-main);
+    border-radius: 6px;
+    position: relative;
+}
+@media screen and (min-width: 768px) {
+
+    .sitcky-card{
+        background: #fff;
+    
+    }
+}
+
+
+
+.sitcky-card img{
+    background: #fff;
+    width: 100% ;
+    height: 100%;
+    border-radius: 6px;
+
+}
+
+/* =============== YOUTUBE BUTTON =============== */
+
+#yt-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  
+.yt-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FF0000;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;  
+    border-radius:50%;
+}
+
+.yt-button a i{
+color: #fff;
+font-size: 1.1em;
+padding-top: 5px;
+}
+
+
+
+
+
+  
+  .yt-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: latido 2s infinite;
+  }
+  @keyframes latido {
+    0% {
+      transform:translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform:translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+      transform:translate(-50%, -50%) scale(1);
+    }
+  }
