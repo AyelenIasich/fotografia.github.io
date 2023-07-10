@@ -1,172 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="icon" href="../../i/favicon.png" type="image/x-icon"> -->
+    <link rel="icon" href="../../i/logo200.svg" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-    <!-- CSS PERSONAL -->
+    <!-- CSS  -->
     <link href="./innovus-style.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&amp;family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&amp;subset=latin&amp;display=swap" rel="stylesheet">
-
-    
+    <!-- link swipper's css  -->
+    <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"/>
     <title>Aprende fotografía | Escuela Online</title>
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary py-1">
-        <div class="container-fluid px-lg-5 ">
-    
-          <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand p-0 m-0 ps-3 pe-3 " href="#">
-            <img src="./img/logo200.svg" srcset="./img/logo200.svg" alt="Logo" class="logo"/>
-          </a> 
-          
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown pe-3 mb-3 mb-lg-0">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 Cursos
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Iniciación a la Fotografía</a></li>
-                  <li ><a class="dropdown-item " href="#">Presets para Edición</a></li>
-    
-                </ul>
-              </li>
-            </ul>
-            <a type="button" id="btn-whatsapp" href="https://api.whatsapp.com/send?phone=+5492901478115&text=Buen día, quisiera conseguir el curso" class="mb-3 d-lg-none btn btn-guardar"><i class="fa-brands fa-whatsapp"></i>  Contáctanos</a>       
-          </div>
-            <a type="button" id="btn-whatsapp" href="https://api.whatsapp.com/send?phone=+5492901478115&text=Buen día, quisiera conseguir el curso" class="d-none d-lg-block btn  btn-guardar"><i class="fa-brands fa-whatsapp"></i>  Contáctanos</a>
-        </div>
-      </nav>
 
-    <!-- END NAVBAR -->
-    <!-- HEADER  -->
-    <div class="BANNERMAIN">
-        <div class=" container-fluid ">
-            <div class="row m-0 padding-lg">
-                <div class="col-12 col-md-7 pt-md-3 pb-3 px-3 px-lg-0">
-                    <div class="d-md-none " id="container-sticky-video">
-                        <div class="mb-4 ">
-                            <div class="sitcky-card ">
-                                <img src="./img/demovideo.jpg" alt="Enlace a video explicativo el curso">
-                                <div id="yt-button-container">
-                                    <div class="yt-button">
-                                        <a href="https://www.youtube.com/watch?v=Tk8i4-0nU0g" class="d-block d-sm-inline-block play relative red" target="_blank" data-fancybox="call_to_action_21_fancybox">
-                                            <i class="fas fa-play"></i></a>
+
+  <!-- Si se eliminar el banner con el timer eliminar este fila -->
+  <div class="container-fluid fixed-top m-0 py-2" id="banner-timer">
+    <div class="row m-0 p-0 justify-content-center align-items-center">
+        <div class="col-auto m-0 p-0">
+            <h5 class="mb-0  pe-1">PROMO ESPECIAL PARA ALUMNOS NUEVOS 🎉 </h5>
+        </div>
+        <div class="col-auto m-0 p-0">
+            <div  id="temporizador"></div>
+        </div>
+    </div>
+</div>
+
+ 
+ <!-- NAVBAR -->
+ <nav class="navbar navbar-expand-lg bg-body-tertiary py-1 mt-5">
+    <div class="container-fluid px-lg-5 ">
+
+      <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand p-0 m-0 ps-3 pe-3 " href="#">
+        <img src="./img/logo200.svg" srcset="./img/logo200.svg"  alt="Logo" class="logo"/>
+      </a> 
+      
+      <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown pe-3 mb-3 mb-lg-0">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Cursos
+                </a>
+                <ul class="dropdown-menu center">
+                    <li><a class="dropdown-item"  href="#">Iniciación a la Fotografía</a></li>
+                    <li><a class="dropdown-item"  href="#">Presets para Edición</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-12 text-center">
+                <a type="button" id="btn-whatsapp" href="https://api.whatsapp.com/send?phone=+5491158810820&text=Hola, me interesa el curso de fotografía inicial." class="mb-3 d-lg-none btn btn-guardar"><i class="fa-brands fa-whatsapp"></i>  Contáctanos</a>
+            </div>
+        </div>
+    </div>
+        <a type="button" id="btn-whatsapp" href="https://api.whatsapp.com/send?phone=+5491158810820&text=Hola, me interesa el curso de fotografía inicial." class="d-none d-lg-block btn  btn-guardar"><i class="fa-brands fa-whatsapp"></i>  Contáctanos</a>
+    </div>
+  </nav>
+
+<!-- END NAVBAR -->
+  <div class="container-fluid p-0 px-lg-0">
+        
+    <div class="row m-0">        
+        <div class="col-12 col-md-7 m-0 p-0" id="first-column">
+            <!-- HEADER -->
+            <div class="BANNERMAIN pb-3" id="header">
+                <div class="container-fluid">
+                    <div class="row padding-lg  px-3 px-sm-5 px-md-3 px-lg-4 ms-xxl-2 " id="header">
+                        <div class="col-12  pt-md-3 pb-3 px-2 px-lg-0 mb-xl-5 "  id="info-header">
+                            <div class="d-md-none " id="container-sticky-video">
+                                <div class="mb-4 ">
+                                    <div class="sitcky-card mx-auto">
+                                        <img src="./img/demovideo.jpg" alt="Enlace a video explicativo el curso">
+                                        <div id="yt-button-container">
+                                            <div class="yt-button">
+                                                <a href="https://www.youtube.com/watch?v=Tk8i4-0nU0g" class="d-block d-sm-inline-block play relative red" >
+                                                    <i class="fas fa-play"></i></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-    
-                    <h2 class="mb-md-4 mt-md-5">Descubrí el <span class="bolder">mejor curso de fotografía</span> del país</h2>
-                    <p class="info pt-2 pt-lg-0">Sé parte de Aprende Fotografía y obtené <span class="bolder">acceso de por vida</span> al curso y comunidad de soporte exclusiva que te lleva de 0 a <span class="bolder">ser un experto</span> 😎</p>
-                    <div class="row pb-5">
-                        <div class="col-12 col-md-6 col-lg-7 col-xl-7 col-xxl-6  info-2 ">
-                            <p class="mb-0"><i class="fa-solid fa-graduation-cap icons-color graduate-icon pe-1 pe-lg-2"></i> Avalado por <span class="bolder">3.100</span> estudiantes satisfechos</p>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-4 info-2 stars pt-2 pt-lg-0 pb-0">
-                            <p class="mb-0"><span class="bolder pe-1">4.7</span> <i class="fa-solid fa-star icons-color"></i> <i class="fa-solid fa-star icons-color"></i> <i class="fa-solid fa-star icons-color"> </i> <i class="fa-solid fa-star icons-color"></i> <i class="fa-solid fa-star icons-color"></i></p>
-                        </div>
+                            <div class="row d-md-none pb-4">
+                                <div class="col-12 col-sm-10 mx-auto">
+                                    <div class="row">
+                                        <div class="col-6   text-center ">
+                                            <p class="precio-antes-p pt-2  mb-0" >Antes $<span class="tachado"><span id="precio_anterior"></span></span></p>
+                                        </div>
+                                        <div class="col-6  text-center">
+                                            <span class=" btn btn-price">Ahorra $<span id="ahorro"></span></span>
+                                        </div>
+                                        <div class="col-6 py-2 text-center ">
+                                            <p class="precio m-0">ARS $<span id="precio_nuevo"></span></p>
+                                        </div>
+            
+                                        <div class="col-6  py-2 text-center">
+                                            <p class="descuento m-0">¡ <span id="porcentaje-descuento"></span> OFF!</p>
+                                        </div>
+                                        <div class="col-12 px-3 ">
+                                            <a class="btn btn-buy animate-hover py-2  text-center ps-4 ">
+                                                ¡Inscribirme Ahora! <i class="fas fa-chevron-right me-3 ps-2 animate-right-3"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-10 mx-auto pt-3">
+                                            <img src="./img/logos-pagos.webp" alt="Logos de medios de pagos" class="img-logos-pagos">
+                                        </div>
+                                        <div class="col-12 py-3">
+                                            <div class="row  garantia-mobile  mx-1">
+                                                <div class="col-3 p-0 px-1 p-xl-3">
+                                                    <img src="./img/garantia-img.svg" alt="Logos de garantía de reembolso" class="img-garantia">
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="col-12 pt-3 pb-2">
+                                                            <p class="bolder m-0">Garantía de reembolso</p>
+                                                    </div>
+                                                    <div class="col-12">
+                                                            <p>Le reembolsaremos el 100% de su pago si no está satisfecho en los primeros 7 días.</p>
+                                                    </div>
+                                                </div>
+                                            </div>                          
+                                        </div>
+                                        
+                                    </div>
+                                </div>                  
+                            </div>
+            
+                            <h2 class="mb-md-0 mb-xxl-4 mt-md-4 mt-lg-0 pb-3 title pb-lg-5  mt-lg-5 mt-xl-5">Descubrí el <span class="bolder">mejor curso de fotografía</span> del país</h2>
+                            <p class="info pt-2 pt-lg-0 pe-lg-3 ">Sé parte de Aprende Fotografía y obtené <span class="bolder">acceso de por vida</span> al curso y comunidad de soporte exclusiva que te lleva de 0 a <span class="bolder">ser un experto</span> 😎</p>
+                            <div class="row pb-3 pb-lg-0 pt-lg-2 ">
+                                <div class="col-auto pe-3  info-2 ">
+                                    <p class="mb-0 small-p"><i class="fa-solid fa-graduation-cap icons-color graduate-icon pe-1 pe-lg-2"></i> Avalado por <span class="bolder">3.100</span> estudiantes satisfechos</p>
+                                </div>
+                                <div class="col-auto col-md-4 col-lg-4 col-xl-4 info-2 stars  pt-lg-0 pb-0">
+                                    <p class="mb-0 small-p"><span class="bolder pe-1">4.7</span> <i class="fa-solid fa-star icons-color"></i> <i class="fa-solid fa-star icons-color"></i> <i class="fa-solid fa-star icons-color"> </i> <i class="fa-solid fa-star icons-color"></i> <i class="fa-solid fa-star icons-color"></i></p>
+                                </div>
+                            </div> 
+                        </div>          
                     </div> 
                 </div>
-                <div class="col-md-5 d-none d-md-block pt-3 pb-3 px-3 px-lg-0 px-4" id="container-sticky-video">
-                    <div class=" p-2 mx-lg-3 mx-xl-5 px-xl-5 my-4">
-                        <div class="sitcky-card p-2">
-                            <img src="./img/demovideo.jpg" alt="Enlace a video explicativo el curso">
-                            <div id="yt-button-container">
-                                <div class="yt-button">
-                                    <a href="https://www.youtube.com/watch?v=Tk8i4-0nU0g" class="d-block d-sm-inline-block play relative red" target="_blank" data-fancybox="call_to_action_21_fancybox">
-                                        <i class="fas fa-play"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-        </div>
-    </div>
+            </div>
+
+            
+            
     
-    
-    
-     
-    <!-- END HEADER -->
-    <!-- DESCRIPTION SECTION  -->
-    <div class="container-fluid">
-      <div class="row m-0 padding-lg">
-        <div class="col-12 pt-5 pb-5 px-3 px-lg-0">
-          <div class="col-12 col-md-7">
+            <!-- SECTION DESCRIPTION -->
+
+            
+    <div class="row m-0 padding-lg  px-3 px-sm-5 px-md-3 px-lg-5 ms-xxl-3 " id="description">
+        <div class="col-12 pt-5 pb-5 px-2 px-md-2 px-lg-0">
+          <div class="col-12 descripcion-section">
               <h4 class="mb-4 bolder900">Descripción del curso</h4>
               <h2 class="title-section mb-3">Aprendé a tomar fotos fascinantes</h2>
   
-              <p class=" pt-lg-0 pb-0 m-2 mx-0 ">¡Solo necesitas tu usuario de Facebook para poder acceder!</p>
-              <p class="pt-lg-0 pb-0 m-2 mx-0 ">Vas a aprender hasta convertirte en un profesional. El curso está explicado de forma sencilla en <span class="bolder">más de 20 videos</span>.</p>
-              <p class="mb-3 pt-lg-0 m-2 mx-0">Además, recibirás nuestro <span class="bolder">libro digital sin costo</span>, con imágenes y textos que podrás llevar contigo en todo momento.</p>
+              <p class=" pt-lg-0  pb-2 m-2 mx-0 ">¡Solo necesitas tu usuario de Facebook para poder acceder!</p>
+              <p class="pt-lg-0  pb-2 m-2 mx-0 ">Vas a aprender hasta convertirte en un profesional. El curso está explicado de forma sencilla en <span class="bolder">más de 20 videos</span>.</p>
+              <p class="mb-3 mb-md-2 pt-lg-0 m-2 mx-0">Además, recibirás nuestro <span class="bolder">libro digital sin costo</span>, con imágenes y textos que podrás llevar contigo en todo momento.</p>
               
-              <ul class="px-0 pt-3" id="list-pro">
-                  <li class="pb-3 mx-0"> 
-                      <div class="row ">
-                          <div class="col-auto d-flex align-items-center text-center">
-                              <i class="fas fa-check icons-color list pe-2"></i>
-                          </div>
-                          <div class="col px-0">
-                              <span>Paso a paso y en detalle para que <span class="bolder">aprendas rápido</span></span>
-                          </div>
-                      </div>
-                  </li>
-                  <li class="pb-3 mx-0"> 
-                      <div class="row ">
-                          <div class="col-auto d-flex align-items-center text-center">
-                              <i class="fas fa-check icons-color list pe-2"></i>
-                          </div>
-                          <div class="col px-0">
-                            </span> los videos del curso desde tu <span class="bolder">celular, tablet, notebook o PC</span></span>
-                          </div>
-                      </div>
-                  </li>
-                  <li class="pb-3 mx-0"> 
-                      <div class="row ">
-                          <div class="col-auto d-flex align-items-center text-center">
-                              <i class="fas fa-check icons-color list pe-2"></i>
-                          </div>
-                          <div class="col px-0">
-                              <span>Acceso para siempre a nuestra <span class="bolder">comunidad online</span> para despejar dudas y experiencias con otros usuarios.</span>
-                          </div>
-                      </div>
-                  </li>
-  
-              </ul>
-            <div class="row">
-                  <div class="card card-review col-lg-8">
-                      <div class="card-body py-4">
-                          <div class="row " id="row-card">
-                              <div class="col-12 d-lg-none mx-0 m-2"><span class="mb-0 stars-review"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"> </i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></span></div>
-                              <div class="col-3 d-none d-lg-block review-img" >
-                                  <img class="review" src="./img/AdrianaHerrera.jpg" alt="">
+              <div class="row  px-1 px-md-2 px-lg-0">
+                  <div class="col-12">
+                      <ul class="px-0 pt-3 pt-md-1" id="list-pro">
+                          <li class="pb-3 pb-md-1  mx-0"> 
+                              <div class="row ">
+                                  <div class="col-auto d-flex align-items-center text-center">
+                                      <i class="fas fa-check icons-color list pe-2"></i>
+                                  </div>
+                                  <div class="col px-0">
+                                      <span class="items-list">Paso a paso y en detalle para que <span class="bolder">aprendas rápido</span></span>
+                                  </div>
                               </div>
-                              <div class="col-12 col-lg-9  m-0 ">
-                                  <p>"Excelente curso, conciso y preciso. Me sirvió muchísimo para entender las nociones básicas y poder comenzar este desafío que es la fotografía. Muchas gracias"</p>   
-                                  <p class="bolder900 mb-0 d-none d-lg-block">Adriana Herrera <i class="fas fa-check-circle mx-1 icon-color-green"></i><span class="text-grey">Usuario verificado</span></p> 
-                                 <span class="mb-0 stars-review d-none d-lg  -block"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"> </i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></span>
+                          </li>
+                          <li class="pb-3 pb-md-1 mx-0"> 
+                              <div class="row ">
+                                  <div class="col-auto d-flex align-items-center text-center">
+                                      <i class="fas fa-check icons-color list pe-2"></i>
+                                  </div>
+                                  <div class="col px-0">
+                                      <span class="items-list"> Mira los videos del curso desde tu <span class="bolder">celular, tablet, notebook o PC</span></span>
+                                  </div>
+                              </div>
+                          </li>
+                          <li class="pb-3 pb-md-1  mx-0"> 
+                              <div class="row ">
+                                  <div class="col-auto d-flex align-items-center text-center">
+                                      <i class="fas fa-check icons-color list pe-2"></i>
+                                  </div>
+                                  <div class="col px-0">
+                                      <span class="items-list">Acceso para siempre a nuestra <span class="bolder">comunidad online</span> para despejar dudas y experiencias con otros usuarios.</span>
+                                  </div>
+                              </div>
+                          </li>
+                      </ul> 
+                  </div>
+              </div>
+  
+  
+            <div class="row m-0 px-md-3">
+                  <div class="card card-review me-2 me-sm-0 col-xxl-8">
+                      <div class="card-body pt-3 pt-xl-4 pb-4">
+                          <div class="row " id="row-card">
+                              <div class="col-12  d-xl-none mx-0 mb-3"><span class="mb-0 stars-review"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"> </i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></span></div>
+                              <div class="col-xxl-3 col-md-2 d-none d-md-block review-img position-relative" >
+                                  <img class="review position-absolute" style="top:15%" src="./img/AdrianaHerrera.jpg" alt="">
+                              </div>
+                              <div class="col-12  col-md-10 col-xxl-9  m-0 ">
+                                  <p class="text-md-start">"Excelente curso, conciso y preciso. Me sirvió muchísimo para entender las nociones básicas y poder comenzar este desafío que es la fotografía. Muchas gracias"</p>   
+                                  <p class="bolder900 mb-0 d-none d-md-block text-md-end text-xl-start">Adriana Herrera <i class="fas fa-check-circle mx-1 icon-color-green"></i><span class="text-grey">Usuario verificado</span></p> 
+                                 <span class="mb-0 stars-review d-none d-xl-block"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"> </i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></span>
                               </div>                        
                           </div>   
-                          <div class="row d-lg-none" >
-                              <div class="col-3 review-img" id="row-card">
+                          <div class="row d-md-none" >
+                              <div class="col-3 col-md-2 review-img" id="row-card">
                                   <img class="review" src="./img/AdrianaHerrera.jpg" alt="">
                               </div>
-                              <div class="col-9 " id="">
-                                  <p class="bolder900 mb-0">Adriana Herrera <i class="fas fa-check-circle mx-1 icon-color-green"></i><span class="text-grey">Usuario verificado</span></p> 
-                                
+                              <div class="col-9 col-md-10  position-relative " id="">
+                                  <p class="bolder900 mb-0 position-absolute text-md-center"  style="bottom:0; ">Adriana Herrera <i class="fas fa-check-circle mx-1 icon-color-green"></i><span class="text-grey">Usuario verificado</span></p>                               
                               </div>
                           </div>                     
                       </div>
@@ -175,80 +231,1125 @@
             </div>
           </div>
       </div>
-  </div>  
-    <!-- END DESCRIPTION SECTION  -->
-    <!-- BONUS SECTION  -->
-    <div class="container-fluid" id="bonus">
-        <div class="row m-0 padding-lg">
-            <div class="col-12 pt-5 pb-5 px-2 px-lg-0">
-                <div class="col-12 col-md-7 px-0">
-                    <div class="bonus-header">
-                        <h4 class="mb-4 bolder900">Bonus</h4>
-                        <h2 class="title-section">¡Aproveche esta oferta exclusiva y reciba estos increíbles bonos!</h2>    
-                        <p class="mt-3 mt-lg-3 pt-lg-0 pb-0">Inscríbete y <span class="bolder900" >obtén gratis todos estos bonus</span> 🎁</p>
+  
+  
+  
+       
+            <!-- SECTION BONUS -->
+            <div id="bonus">
+                <div class="row m-0 padding-lg   px-3 px-sm-5 px-md-3 px-lg-5 ms-xxl-3">
+                    <div class="col-12 pt-5 px-md-2 pt-md-0 pb-5 px-2 px-lg-0">
+                        <div class="col-12  px-0">
+                            <div class="bonus-header">
+                                <h4 class="mb-4 bolder900">Bonus</h4>
+                                <h2 class="title-section">¡Aproveche esta oferta exclusiva y reciba estos increíbles bonos!</h2>    
+                                <p class="mt-3 mt-lg-3 pt-lg-0 pb-0">Inscríbete y <span class="bolder900" >obtén gratis todos estos bonus</span> 🎁</p>
+                            </div>
+                            <div class="row pt-3 pt-lg-3 bonus-description">
+                                <div class="col-3 h-100 col-xl-2 review-img pe-0 d-flex align-items-center justify-content-center">
+                                  <img class="bonus-img" src="./img/librogratis.svg" alt="Imagen de libro gratis">
+                                </div>
+                                <div class="col-9 col-xl-10  ps-lg-4 pe-0 pb-0">
+                                  <h5 class="pt-2 mb-0 mb-sm-2">🎁 BONUS #1</h5>
+                                  <h4 class="pt-2 pt-lg-0 mb-0 title-section">Libro Digital sin costo</h4>
+                                  <p class="d-none mb-0 d-lg-block p-md-2 ps-md-0">Incluye teoría de la fotografía para que puedas entender tu cámara</p>
+                                </div>
+                                <div class="col-12 pt-2 d-lg-none">
+                                  <p class="">Incluye teoría de la fotografía para que puedas entender tu cámara</p>
+                                </div>
+                              </div>
+                            <div class="row pt-3 pt-lg-5 bonus-description">
+                                <div class="col-3  h-100 col-xl-2  review-img pe-0 " >
+                                    <img class="bonus-img" src="./img/ejercicios.jpg" alt="Imagen de ejercicios">
+                                </div>
+                                <div class="col-9 col-xl-10  ps-lg-4  pe-0 pb-0">
+                                    <h5 class="pt-2 mb-0 mb-sm-2">🎁 BONUS #2</h5>
+                                    <h4 class="pt-2 pt-lg-0  mb-0 title-section">Ejercicios prácticos</h4>
+                                    <p class="d-none mb-0 d-lg-block p-md-2 ps-md-0">No te quedes solo con la teoria, te damos video tutoriales para que puedas practicar mientras aprendés</p>
+                                </div>
+                                <div class="col-12  pt-3">
+                                    <p class="d-lg-none">No te quedes solo con la teoria, te damos video tutoriales para que puedas practicar mientras aprendés</p>
+                                </div>
+                            </div>
+                            <div class="row pt-3  pt-lg-5   bonus-description">
+                                <div class="col-3 h-100 col-xl-2 review-img pe-0" >
+                                    <img class="bonus-img" src="./img/CONSTANCIA.jpg" alt="Imagen de certificado">
+                                </div>
+                                <div class="col-9  col-xl-10   ps-lg-4 pe-0 pb-0">
+                                    <h5 class="pt-2 mb-0 mb-sm-2">🎁 BONUS #3</h5>
+                                    <h4 class="pt-2  pt-lg-0 mb-0 title-section">Incluye Certificado Oficial</h4>
+                                    <p class="d-none mb-0 d-lg-block p-md-2 ps-md-0">Te otorgamos una constancia oficial de finalización</p>
+                                </div>
+                                <div class="col-12  pt-3">
+                                    <p class="d-lg-none">Te otorgamos una constancia oficial de finalización</p>
+                                </div>
+                            </div>
+            
+            
+                        </div>
                     </div>
-                    <div class="row pt-3 pt-lg-3  bonus-description">
-                        <div class="col-3 col-xl-2 review-img pe-0" >
-                            <img class="bonus-img" src="./img/librogratis.svg" alt="Imagen de libro gratis">
+                </div>
+            </div>
+            
+            
+            
+
+   
+            <!-- SECTION COMO FUNCIONA -->
+              
+                <div class="row m-0 p-0 padding-lg  px-3 px-sm-5 px-md-3 px-lg-5 ms-xxl-3 como-funciona">
+                    <div class="col-12   pb-5 px-2 px-md-2 px-lg-0 descripcion-section">
+                    
+                        <h4 class=" mb-0 bolder900">¿Cómo funciona?</h4>
+                
+                        <div class="swiper">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper pb-5 pt-3 px-xxl-0">
+                            <!-- Slides -->
+                            <div class="swiper-slide py-3 py-xxl-3">
+                                <div class="card mx-auto">
+                                    <div class="row pt-3">
+                                        <div class="col-11 mx-auto container-img-card" >
+                                            <img src="./img/inscribete.webp" class="h-100 w-100 img-responsive" alt="Imagen del primer paso Inscripcion">
+                                        </div>
+                                        <div class="col-11 pt-3 mx-auto">
+                                            <h5 class="text-center">01</h5>
+                                            <p class="bolder pt-lg-0 text-center  ">Inscríbete hoy</p>
+                                            <p class=" text-center">Recibes por e-mail tu acceso a la academia online y comunidad</p>
+                                        </div>
+                                    </div>    
+                                </div>
+                    
+                            </div>
+                            <div class="swiper-slide  py-3 py-xxl-3">
+                                <div class="card mx-auto">
+                                    <div class="row pt-3">
+                                        <div class="col-11 mx-auto container-img-card" >
+                                            <img src="./img/estudia.webp" class="h-100 w-100 img-responsive" alt="Imagen del primer paso Inscripcion">
+                                        </div>
+                                        <div class="col-11 pt-3 mx-auto">
+                                            <h5 class="text-center">02</h5>
+                                            <p class="bolder pt-lg-0 text-center  ">Estudia a su propio ritmo</p>
+                                            <p class=" text-center">Realiza el curso a tu ritmo, sin horarios fijos y en tu tiempo libre.</p>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                            <div class="swiper-slide  py-3 py-xxl-3">
+                                <div class="card mx-auto">
+                                    <div class="row pt-3">
+                                        <div class="col-11 mx-auto container-img-card" >
+                                            <img src="./img/certificate.webp" class="h-100 w-100 img-responsive" alt="Imagen del primer paso Inscripcion">
+                                        </div>
+                                        <div class="col-11 pt-3 mx-auto position-relative">
+                                            <h5 class="text-center">03</h5>
+                                            <p class="bolder pt-lg-0 text-center ">¡Obtén tu certificado!</p>
+                                            <p class="text-center pb-xl-3 pb-xxl-4">Apruebas el examen y recibes el diploma</p>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                            ...
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+                        
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>        
+                        </div>         
+                    </div>
+                </div>
+
+
+
+
+         
+            <!-- SECTION PARA QUIEN ES ESTE CURSO -->
+            
+            <div class="row m-0 padding-lg  px-3 px-sm-5 px-md-3 px-lg-5 ms-xxl-3" id="destinatarios">
+                <div class="col-12 pt-5 pb-5 px-2 px-md-2 px-lg-0 descripcion-section">
+                    <h4 class="mb-4 bolder900">¿Para quién es este curso?</h4> 
+                    <div class="row ">
+                        <div class="col-12  col-xl-11 card mx-auto p-3  pt-4 p-xl-4 px-xl-5 mt-4">
+                            <h2 class="title-section mb-3">¡Para todos!</h2>
+                            <div class="row  px-1 px-md-2 px-lg-0">
+                                <div class="col-12 px-lg-4   px-xl-0  ">
+                                    <ul class="px-0 pt-3 pt-md-1" id="list-pro">
+                                        <li class="pb-3 pb-md-1 mx-0"> 
+                                            <div class="row pb-lg-3">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <i class="fas fa-check icons-color list pe-2"></i>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <span class="items-list"><span class="bolder">No importa la edad ni la cámara que tengas.</span> Si te llama la atención sacar fotos, este curso es para vos. </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="  mx-0"> 
+                                            <div class="row ">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <i class="fas fa-check icons-color list pe-2"></i>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <span class="items-list"><span class="bolder">Amantes del arte</span> que quieran aprender a fotografíar como <span class="bolder">hobby</span> manteniendo un buen nivel. </span>
+                                                </div>
+                                            </div>
+                                        </li>    
+                                    </ul> 
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-9 col-xl-10 ps-2 ps-lg-4 pe-0 pb-0">
-                            <h5 class="pt-2">🎁 BONUS #1</h5>
-                            <h4 class="pt-2 mb-0 title-section">Libro Digital sin costo</h4>
-                            <p class="d-none d-lg-block p-md-2 ps-md-0">Incluye teoria de la fotografía para que puedas entender tu cámara</p>
+                        <div class="col-12  col-xl-11 card mx-auto p-3 pt-4  p-xl-4  px-xl-5  mt-4">
+                            <h2 class="title-section mb-3">Amantes del Arte</h2>
+                            <div class="row  px-1 px-md-2 px-lg-0">
+                                <div class="col-12 px-lg-4  px-xl-0">
+                                    <ul class="px-0 pt-3 pt-md-1" id="list-pro">
+                                        <li class="pb-3 pb-md-1 mx-0"> 
+                                            <div class="row  pb-lg-3">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <i class="fas fa-check icons-color list pe-2"></i>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <span class="items-list"><span class="bolder">Principiantes</span> que quieran aprender a <span class="bolder">sacar fotos de manera correcta</span></span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class=" mx-0"> 
+                                            <div class="row ">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <i class="fas fa-check icons-color list pe-2"></i>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <span class="items-list">Personas que quieran <span class="bolder">hacer de la fotografía su profesión.</span></span>
+                                                </div>
+                                            </div>
+                                        </li>    
+                                    </ul> 
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12  pt-2">
-                            <p class="d-lg-none">Incluye teoria de la fotografía para que puedas entender tu cámara</p>
+                        <div class="col-12  col-xl-11 extra-info  card mx-auto p-3  pt-4 p-xl-4 px-xl-5 mt-4">
+                            <div class="row">
+                                <div class="col-3 p-1 col-lg-3 h-100 container-logo text-center">
+                                    <img src="./img/image-12.webp" srcset="./img/image-12.webp" alt="Logo de video" class="h-100" />
+                                </div>
+                                <div class="col-9 col-lg-9 h-100 d-flex align-items-center">
+                                    <div class="text-start">
+                                        <p class="items-list main-color"><span class="bolder">Videos y material teórico</span></p>
+                                        <p class="items-list mb-0">Paso a paso y en detalle para que aprendas rápido</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-xl-11 extra-info card mx-auto p-3  pt-4 p-xl-4 px-xl-5 mt-4">
+                            <div class="row">
+                                <div class="col-3 p-1 py-3  py-sm-0 col-lg-3 h-100 container-logo text-center">
+                                    <img src="./img/image-13.webp" srcset="./img/image-13.webp" alt="Logo de video" class="h-100" />
+                                </div>
+                                <div class="col-9 col-lg-9 h-100 d-flex align-items-center">
+                                    <div class="text-start">
+                                        <p class="items-list main-color"><span class="bolder">Acceso a nuestra comunidad</span></p>
+                                        <p class="items-list mb-0">Acceso para siempre a nuestra comunidad online para despejar dudas y experiencias con otros usuarios.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-xl-11 extra-info card mx-auto p-3  pt-4 p-xl-4 px-xl-5 mt-4">
+                            <div class="row">
+                                <div class="col-3 p-1 py-3  py-sm-0 col-lg-3 h-100 container-logo text-center">
+                                    <img src="./img/image-14.webp" srcset="./img/image-14.webp" alt="Logo de video" class="h-100" />
+                                </div>
+                                <div class="col-9 col-lg-9 h-100 d-flex align-items-center">
+                                    <div class="text-start">
+                                        <p class="items-list main-color"><span class="bolder">Acceso ilimitado</span></p>
+                                        <p class="items-list mb-0">Mirá los videos del curso desde tu celular, tablet, notebook o PC en tus ratos libres o cuando tengas tiempo</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row pt-3 pt-md-5 bonus-description">
-                        <div class="col-3 col-xl-2  review-img pe-0" >
-                            <img class="bonus-img" src="./img/ejercicios.jpg" alt="Imagen de ejercicios">
-                        </div>
-                        <div class="col-9 col-xl-10  ps-2 ps-lg-4  pe-0 pb-0">
-                            <h5 class="pt-2">🎁 BONUS #2</h5>
-                            <h4 class="pt-2 mb-0 title-section">Ejercicios prácticos</h4>
-                            <p class="d-none d-lg-block p-md-2 ps-md-0">No te quedes solo con la teoria, te damos video tutoriales para que puedas practicar mientras aprendés</p>
-                        </div>
-                        <div class="col-12  pt-3">
-                            <p class="d-lg-none">No te quedes solo con la teoria, te damos video tutoriales para que puedas practicar mientras aprendés</p>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- SECTION ¿QUÉ INCLUYE? -->
+                    
+        <div class="row m-0 padding-lg  px-3 px-sm-5 px-md-3 px-lg-5 ms-xxl-3" id="destinatarios">
+            <div class="col-12 pt-5 pb-5 px-2 px-md-2 px-lg-0 descripcion-section">
+                <h4 class="mb-4 bolder900">¿Qué incluye?</h4> 
+                <h2 class="title-section">21 video-clases con acceso ilimitado</h2>  
+                <p class=" mb-0 subtitulo">Contenido del curso</p>
+                <p class=" mb-0 contenido">4 unidades </p>
+                <div class="row pt-3 ">
+                    <div class="col-12">
+                        <div class="accordion" id="accordionExample">
+                        
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-sm-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <p class="bolder mb-0">UNIDAD 1</p>  
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul class="px-0 pt-3 pt-md-1" id="list-pro">
+
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">¿Qué es una cámara Reflex?</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Partes de una cámara</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Tipos de cámaras</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>                         
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-sm-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <p class="bolder mb-0">UNIDAD 2</p>  
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul class="px-0 pt-3 pt-md-1" id="list-pro">
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row  ps-3 ps-sm-4  ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Diafragma</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1 mx-0"> 
+                                            <div class="row ps-3 ps-sm-4  ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Profundidad de campo</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Iso</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Velocidad de Obturación</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Triángulo de exposición</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>                         
+                                </div>
+                            </div>
+                            </div>
+                            <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-sm-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <p class="bolder mb-0">UNIDAD 3</p>  
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul class="px-0 pt-3 pt-md-1" id="list-pro">
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row  ps-3 ps-sm-4  ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Distancia Focal</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1 mx-0"> 
+                                            <div class="row ps-3 ps-sm-4  ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Tipos de Lentes</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Distancia Hiperfocal ( Solo en el PDF)</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Histograma</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Tipos de enfoque</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Medición de Luz</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Temperatura de color y balance de blancos</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Formatos de imagen: Raw y JPG</p>
+                                                </div>
+                                            </div>
+                                        </li>                               
+                                    </ul>             
+                                </div>
+                            </div>
+                            </div>
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-sm-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <p class="bolder mb-0">UNIDAD 4</p>  
+                                </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul class="px-0 pt-3 pt-md-1" id="list-pro">
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row  ps-3 ps-sm-4  ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Tipos de Planos</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1 mx-0"> 
+                                            <div class="row ps-3 ps-sm-4  ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Ángulos de cámara</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Tipos de iluminaciones</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Línea de Horizonte</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Regla de tercios</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Espacio en Negativo</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="pb-3 pb-md-1  mx-0"> 
+                                            <div class="row ps-3 ps-sm-4 ps-md-5">
+                                                <div class="col-auto d-flex align-items-center text-center">
+                                                    <span class="punto me-3"></span>
+                                                </div>
+                                                <div class="col px-0">
+                                                    <p class="mb-0">Punto de fuga</p>
+                                                </div>
+                                            </div>
+                                        </li>                               
+                                    </ul>             
+                                </div>
+                                </div>
+                            </div>             
                         </div>
                     </div>
-                    <div class="row pt-3 pt-md-5   bonus-description">
-                        <div class="col-3  col-xl-2 review-img pe-0" >
-                            <img class="bonus-img" src="./img/CONSTANCIA.jpg" alt="Imagen de certificado">
-                        </div>
-                        <div class="col-9  col-xl-10  ps-2   ps-lg-4 pe-0 pb-0">
-                            <h5 class="pt-2">🎁 BONUS #3</h5>
-                            <h4 class="pt-2 mb-0 title-section">Incluye Certificado Oficial</h4>
-                            <p class="d-none d-lg-block p-md-2 ps-md-0">Te otorgamos una constancia oficial de finalización</p>
-                        </div>
-                        <div class="col-12  pt-3">
-                            <p class="d-lg-none">Te otorgamos una constancia oficial de finalización</p>
-                        </div>
-                    </div>   
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+    	    <!-- SECTION FOTOS -->
+
+            
+            <div class="row m-0 padding-lg  px-3 pe-2 px-sm-3 px-sm-5 px-md-3 px-lg-5 ms-xxl-3" id="fotos">
+                <div class="col-12 pb-4 pb-lg-0 pb-xl-3 px-2 px-md-2 px-lg-0 descripcion-section">   
+                    <h2 class="title-section">¡Aprendé a sacar fotos como estas!</h2>  
+                </div> 
+                <div class="col-12 col-sm-11 p-lg-4  col-xl-10 mx-auto">
+                    <swiper-container class="mySwiper " pagination="true" pagination-dynamic-bullets="true">
+                        <swiper-slide class="pb-5">
+                            <img src="./img/GALERIASABERFOTOGRAFIA1.jpg" class="" alt="Foto 1">    
+                        </swiper-slide>
+                        <swiper-slide class="pb-5">
+                            <img src="./img/GALERIASABERFOTOGRAFIA2.jpg" class="" alt="Foto 2">
+                        </swiper-slide>
+                        <swiper-slide class="pb-5">
+                            <img src="./img/GALERIASABERFOTOGRAFIA3.jpg" class="" alt="Foto 3">
+                        </swiper-slide>
+                        <swiper-slide class="pb-5">
+                            <img src="./img/GALERIASABERFOTOGRAFIA4.jpg" class="" alt="Foto 4">
+                        </swiper-slide>
+                        <swiper-slide class="pb-5">
+                            <img src="../img/GALERIASABERFOTOGRAFIA5.jpg" class="" alt="Foto 5">
+                        </swiper-slide>
+                        <swiper-slide class="pb-5">
+                            <img src="./img/GALERIASABERFOTOGRAFIA6.jpg" class="" alt="Foto 6">
+                        </swiper-slide>
+                    </swiper-container>
+                </div>
+            </div>
+
+    
+    	    <!-- SECTION PREGUNTAS COMUNES -->
+            
+            <div class="row m-0 padding-lg  px-3 px-sm-5 px-md-3 px-lg-5 ms-xxl-3" id="destinatarios">
+                <div class="col-12 pt-5 pb-5 px-2 px-md-2 px-lg-0 descripcion-section">
+                    <h4 class="mb-4 bolder900">¿Tienes dudas?</h4> 
+                    <h2 class="title-section">¡Tenemos respuestas!</h2>  
+                    <p class=" mb-0 ">Revisa nuestras preguntas frecuentes</p>
+                
+                    <div class="row pt-3 ">
+                        <div class="col-12">
+                            <div class="accordion" id="accordionQuestionExample">
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-sm-4" type="button" data-bs-toggle="collapse" data-bs-target="#questionOne" aria-expanded="false" aria-controls="questionOne">
+                                        <p class="bolder mb-0">¿Qué necesito para hacer el curso?</p>  
+                                    </button>
+                                    </h2>
+                                    <div id="questionOne" class="accordion-collapse collapse" data-bs-parent="#accordionQuestionExample">
+                                    <div class="accordion-body">
+                                        <p class="mb-0 py-3"><span class="bolder">No necesitas una cámara profesional</span>, podés empezar el curso con tu celular, aunque lo ideal es que tengas una cámara para ir practicando. Solamente con tu <span class="bolder">cuenta de Facebook</span> podés empezar a <span class="bolder">ver los videos.</span></p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-sm-4" type="button" data-bs-toggle="collapse" data-bs-target="#questionTwo" aria-expanded="false" aria-controls="questionTwo">
+                                        <p class="bolder mb-0">¿Necesito conocimientos para empezar?</p>  
+                                    </button>
+                                </h2>
+                                <div id="questionTwo" class="accordion-collapse collapse" data-bs-parent="#accordionQuestionExample">
+                                    <div class="accordion-body">
+                                        <p class="mb-0  py-3">No,<span class="bolder"> no necesitas conocimientos </span>para realizar el curso, te enseñaremos a crear fotos <span class="bolder">desde cero.</span></p>                       
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="accordion-item mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-sm-4" type="button" data-bs-toggle="collapse" data-bs-target="#questionThree" aria-expanded="false" aria-controls="questionThree">
+                                        <p class="bolder mb-0">¿Me dan constancia al terminarlo?</p>  
+                                    </button>
+                                </h2>
+                                <div id="questionThree" class="accordion-collapse collapse" data-bs-parent="#accordionQuestionExample">
+                                    <div class="accordion-body">
+                                        <p class="mb-0  py-3"><span class="bolder">Sí</span>. Te otorgamos una <span class="bolder">constancia oficial</span>  de finalización.</p>        
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-sm-4" type="button" data-bs-toggle="collapse" data-bs-target="#questionFour" aria-expanded="false" aria-controls="questionFour">
+                                        <p class="bolder mb-0">¿Cómo accedo al curso?</p>  
+                                    </button>
+                                    </h2>
+                                    <div id="questionFour" class="accordion-collapse collapse" data-bs-parent="#accordionQuestionExample">
+                                    <div class="accordion-body">
+                                        <p class="mb-0  py-3">Una vez realizado el pago, te llegará un <span class="bolder">correo con un link a nuestro grupo en Facebook</span> donde tendrás acceso de forma fácil al curso.</p>                     
+                                    </div>
+                                    </div>
+                                </div> 
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-sm-4" type="button" data-bs-toggle="collapse" data-bs-target="#questionFive" aria-expanded="false" aria-controls="questionFive">
+                                        <p class="bolder mb-0">¿Tienen garantía de satisfacción?</p>  
+                                    </button>
+                                    </h2>
+                                    <div id="questionFive" class="accordion-collapse collapse" data-bs-parent="#accordionQuestionExample">
+                                    <div class="accordion-body">
+                                        <p class="mb-0  py-3">Contamos con garantía de satisfacción de <span class="bolder">7 días</span>! Esto quiere decir que si no estás conforme con el curso te <span class="bolder">devolvemos el dinero.</span></p>                     
+                                    </div>
+                                    </div>
+                                </div>     
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-sm-4" type="button" data-bs-toggle="collapse" data-bs-target="#questionSix" aria-expanded="false" aria-controls="questionSix">
+                                        <p class="bolder mb-0">¿Por cuánto tiempo lo tengo?</p>  
+                                    </button>
+                                    </h2>
+                                    <div id="questionSix" class="accordion-collapse collapse" data-bs-parent="#accordionQuestionExample">
+                                    <div class="accordion-body">
+                                        <p class="mb-0  py-3">Tenes <span class="bolder">acceso al curso de por vida</span> . Podés hacerlo a tu ritmo en 1 día, 1 semana, 1 mes. ¡Vos elegís!</p>                     
+                                    </div>
+                                    </div>
+                                </div>          
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+  
+    	    <!-- SECTION CURSOS RELACIONADOS -->
+            <div class="row m-0 p-0 padding-lg  px-3 px-sm-5 px-md-3 px-lg-5 ms-xxl-3 cursos-relacionados">
+                <div class="col-12   pb-5 px-2 px-md-2 px-lg-0 descripcion-section ">    
+                    <h2 class="title-section pb-4">Cursos Relacionados</h2> 
+                    <div class="row">
+                        <a href="../../../fotografia/cursos/presets_1/index.html" class=" mx-auto card">
+                            <div class="row pt-3">
+                                <div class="col-12 mx-auto container-img-card" >
+                                    <img src="./img/Presetshome.jpg" class="h-100 w-100 img-responsive" alt="Imagen del primer paso Inscripcion">
+                                </div>
+                                <div class="col-11 pt-3 mx-auto position-relative">
+                                    <h5 class="text-center">Presets para edición</h5>
+                                    <p class="bolder pt-lg-0 text-center ">¡Dale estilo a tus fotografías! </p>
+                                    <p class="text-center pb-xl-3 pb-xxl-4">No pierdas tiempo en la edición, con nuestros presets vas a lograr un impacto en tus fotos en pocos clicks. Es muy fácil de usar, te vamos a enseñar.</p>
+                                </div>
+                            </div> 
+                        </a>
+                    </div>   
+                  </div>
+              </div>
+            
+            
+
+
+            
+        </div>
+        <div class="col-md-5  p-0 d-none d-md-block" id="second-colum">
+             <!-- STICKY CARD -->
+             <div class="row m-0 p-0 p-0">
+                <div class="col-12 mx-0 pt-1 BANNERMAIN pb-5 ">
+                    <div class=" pb-0 mb-0 px-lg-0  " id="container-sticky-video">
+                        <div class=" pb-0 mb-0 my-4">
+                            <div class="sitcky-card mx-auto c p-2 pb-3 mb-0">
+                                <img src="./img/demovideo.jpg" alt="Enlace a video explicativo el curso">
+                                <div id="yt-button-container">
+                                    <div class="yt-button">
+                                        <a href="https://www.youtube.com/watch?v=Tk8i4-0nU0g" class="d-block d-sm-inline-block play relative red" >
+                                            <i class="fas fa-play"></i></a>
+                                    </div>
+                                </div>            
+                            </div>     
+                        </div>    
+                    </div>
+                </div>
+            </div>            
+            <div id="buying-card-sticky" class="row m-0 p-0 mb-2">    
+                <div class="col-12  " id="">
+                    <div class=" ">
+                        <div class="b-card mx-auto p-2 pe-0 ">
+                            <div class="row px-3">
+                                <div class="col-6 d-xl-none  text-center ">
+                                    <p class="precio-antes-p pt-2 mb-0" >Antes $<span class="tachado"><span id="precio_anterior-desktop"></span></span></span></p>
+                                </div>
+                                <div class="col-6 d-xl-none  text-center">
+                                    <span class=" btn btn-price">Ahorra $<span id="ahorro-desktop"></span></span>
+                                </div>
+            
+                                <div class="d-none d-xl-block col-xl-7 ">
+                                    <p class="precio-antes-p" >Antes $<span class="tachado"><?php echo $precio_anterior ?></span>  <span class=" btn btn-price">Ahorra $<?php echo $ahorro; ?></span></p>
+                                    <p class="precio d-none d-xl-block ">ARS $<span id="precio_nuevo-desktop"></span></p>
+                                </div>
+                                <div class="col-6 d-xl-none py-2 text-center ">
+                                    <p class="precio m-0">ARS $<span id="precio_nuevo-desktop"></span></p>
+                                </div>
+            
+                                <div class="col-6 col-xl-5 py-2 py-xl-3 text-center">
+                                    <p class="descuento m-0">¡ <span id="porcentaje-descuento-desktop"></span> OFF!</p>
+                                </div>
+                                <div class="col-12 px-3 ">
+                                    <a class="btn btn-buy animate-hover py-2 py-xl-3 text-center ps-4 ">
+                                        ¡Inscribirme Ahora! <i class="fas fa-chevron-right me-3 ps-2 animate-right-3"></i>
+                                    </a>
+                                </div>
+                                <div class="col-10 mx-auto pt-3">
+                                     <img src="./img/logos-pagos.webp" alt="Logos de medios de pagos" class="img-logos-pagos">
+                                </div>
+                                <div class="col-12 pt-3 bolder ">
+                                    <p class="title-card-sticky m-0">Curso Iniciación a la Fotografía</p>
+                                </div>
+                                <div class="col-12 sections">
+                                     <ul class="px-0 pt-1 pt-xl-3" id="list-pro">
+                                            <li class="pb-xl-3 p-1 mx-0"> 
+                                                <div class="row ">
+                                                    <div class="col-auto d-flex align-items-center text-center">
+                                                        <i class="fas fa-layer-group icons-color list pe-2"></i>
+                                                    </div>
+                                                    <div class="col   p-0 pe-1  px-xl-0">
+                                                        <p class=" my-0 py-0">Nivel <span class="bolder">Principiante</span></p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="pb-xl-3 p-1 "> 
+                                                <div class="row ">
+                                                    <div class="col-auto d-flex align-items-center text-center">
+                                                        <i class="fas fa-clock icons-color list pe-2"></i>
+                                                    </div>
+                                                    <div class="col  p-0 pe-1  px-xl-0">
+                                                    <p class="bolder my-0 py-0">Más de 40hs de contenido</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="pb-xl-3 p-1 "> 
+                                                <div class="row ">
+                                                    <div class="col-auto d-flex align-items-center text-center">
+                                                        <i class="fab fa-youtube icons-color list pe-2"></i>
+                                                    </div>
+                                                    <div class="col  p-0 pe-1  px-xl-0 ">
+                                                    <p class="bolder my-0 py-0">21 clases en video + libro digital sin costo</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="pb-xl-3 p-1 "> 
+                                                <div class="row ">
+                                                    <div class="col-auto d-flex align-items-center text-center">
+                                                        <i class="fas fa-infinity icons-color list pe-2"></i>
+                                                    </div>
+                                                    <div class="col   p-0 pe-1  px-xl-0 ">
+                                                    <p class="bolder my-0 py-0">Acceso ilimitado para siempre al curso</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="pb-xl-3 p-1 "> 
+                                                <div class="row ">
+                                                    <div class="col-auto d-flex align-items-center text-center">
+                                                        <i class="fas fa-user-friends icons-color list pe-2"></i>
+                                                    </div>
+                                                    <div class="col  p-0 pe-1  px-xl-0">
+                                                    <p class="my-0 py-0">Profesor en línea y <span class="bolder">comunidad de ayuda</span></p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="pb-xl-3 p-1 "> 
+                                                <div class="row ">
+                                                    <div class="col-auto d-flex align-items-center text-center">
+                                                        <i class="fa-solid fa-computer icons-color list pe-2"></i>
+                                                    </div>
+                                                    <div class="col  p-0 pe-1  px-xl-0">
+                                                    <p class="my-0 py-0">Acceso desde <span class="bolder">PC, notebook, celular o table</span></p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="pb-xl-3 p-1 "> 
+                                                <div class="row ">
+                                                    <div class="col-auto d-flex align-items-center text-center">
+                                                        <i class="fa-solid fa-camera icons-color list pe-2"></i>
+                                                    </div>
+                                                    <div class="col  p-0 pe-1  px-xl-0">
+                                                    <p class="my-0 py-0">Para  <span class="bolder">todo tipo de fotografia:</span> paisajes, retratos, viajes</p>
+                                                    </div>
+                                                </div>
+                                            </li>                                
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 pb-lg-2">
+                                        <div class="row garantia-container garantia-mobile  mx-1">
+                                            <div class="col-3 p-0 px-1 p-xl-3">
+                                               <img src="./img/garantia-img.svg" alt="Logos de garantía de reembolso" class="img-garantia">
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="col-12 pt-3 pb-2">
+                                                    <p class="bolder m-0">Garantía de reembolso</p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <p>Le reembolsaremos el 100% de su pago si no está satisfecho en los primeros 7 días.</p>
+                                                </div>
+                                            </div>
+                                        </div>                          
+                                    </div>
+                                    <div class="row pt-2">
+                                        <div class="col-auto col-xl-4 p-0  info-2 stars">
+                                          <p class="mb-0 small-p"><span class="bolder pe-1">4.7</span> <i class="fa-solid fa-star icons-color"></i> <i class="fa-solid fa-star icons-color"></i> <i class="fa-solid fa-star icons-color"> </i> <i class="fa-solid fa-star icons-color"></i> <i class="fa-solid fa-star icons-color"></i></p>
+            
+                                        </div>
+                                        <div class=" col col-xl-8 info-2 p-0 pb-0 text-end">
+                                          <p class="mb-0 small-p estudiantes">Basado en <span class="bolder">+3100</span> estudiantes</p> 
+                                        </div>
+                                    </div>           
+                                </div>
+                            </div>         
+                        </div>        
+                    </div>                 
+                </div>         
+            </div> 
+        </div>
     </div>
+     <!-- FOOTER -->
+     <footer class="container-fluid  pt-5   footer pb-5 mb-5 mb-md-0 pb-md-0" id="footer">
+        <div class="row p-0 py-3">
+            <div class="col-12 p-0 col-sm-4 pb-3 pb-md-0 text-center my-3" style="height:10em;">
+                <div class="container-footer-logo h-100 pb-3 pb-md-0 " >
+                    <img src="./img/logowhite.png" srcset="./img/logowhite.png" alt="Logo de F" class="h-100 "/>  
+                </div>                         
+            </div>
+            <div class="col-12 col-sm-4  pt-3 pb-5 pt-lg-4 pt-xl-3  text-center pt-md-0 footer-links">
+                <div class="mx-auto  pt-3 pt-sm-0 pt-md-3 pt-lg-0  ">
+                    <h4 class="pb-3 bolder">Sobre Nosotros</h4>
+                    <p class="mb-1"><a data-bs-toggle="modal" data-bs-target="#privacidad" style="cursor: pointer;" >Políticas de Privacidad</a></p>
+                    <p class="mb-1"><a  data-bs-toggle="modal" data-bs-target="#cookies" style="cursor: pointer;" cookies>Políticas de Cookies</a></p>
+                    <p class="mb-1"><a  data-bs-toggle="modal" data-bs-target="#avisoLegal" style="cursor: pointer;">Aviso Legal</a></p>              
+                </div>           
+            </div>
+            <div class="col-12 col-sm-4 pt-3 pt- pt-lg-4 pt-xl-3  text-center order-first order-sm-last pb-5 pb-sm-0">
+                <h4 class="pb-4 bolder">Conectemos</h4>
+                <div class="row icons-social justify-md-content-center justify-content-center  justify-sm-content-around px-4 ">
+    
+                    <div class="col-2 col-sm-3 col-md-2 ">
+                        <a class="social-icons" href="https://api.whatsapp.com/send?phone=+5491158810820&text=Hola, me interesa el curso de fotografía inicial."><i class="fab fa-whatsapp"></i></a>                    
+                    </div>
+                    <div class="col-2 col-sm-3 col-md-2 ">
+                        <a href="https://www.facebook.com/aprendefotografia.ar/" class="social-icons" href=""><i class="fab fa-facebook"></i></a>                    
+                    </div>
+                    <div class="col-2 col-sm-3 col-md-2 "> 
+                        <a class="social-icons"  href="https://www.instagram.com/aprende.fotografia/" ><i class="fab fa-instagram"></i></a>                    
+                    </div>
+                    <div class="col-2 col-sm-3 col-md-2 ">
+                        <a class="social-icons" href="mailto:example@gmail.com?subject-Hola+me+interesa+el+curso+de+fotografía+inicial"><i class="fa-regular fa-envelope "></i></a>                    
+                    </div>
+    
+                </div>
+            </div>
+        </div>    
+    </footer>
     
     
       
-    <!-- END BONUS SECTION  -->
+      <!-- Modal Politicas de privacidad -->
+      <div class="modal fade" id="privacidad" tabindex="-1" aria-labelledby="PrivacidadLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 bolder text-center" id="PrivacidadLabel">Políticas de Privacidad</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>          
+            </div>
+          </div>
+        </div>
+      </div>
+    
+        <!-- Modal Politicas de Cookies -->
+        <div class="modal fade" id="cookies" tabindex="-1" aria-labelledby="CookiesLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 bolder text-center" id="CookiesLabel">Políticas de Cookies</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>          
+                </div>
+              </div>
+            </div>
+          </div>
+    
+              <!-- Aviso Legal -->
+        <div class="modal fade" id="avisoLegal" tabindex="-1" aria-labelledby="avisoLegalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 bolder text-center" id="avisoLegalLabel">Políticas de Cookies</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>          
+                </div>
+              </div>
+            </div>
+          </div>
+          
 
 
+    <!-- MOBILE ALERT | Direcciona a la seccion de compra-->
+    <div class="container-fluid d-md-none m-0 p-0" id="mobile-alert">
+        <div class="row m-0 p-0">
+          <div class="col-12 ">
+            <div class="row">
+              <div class="col-auto mt-2 mx-auto text-center  small-timer">
+                <i class="fa-regular fa-clock"></i> La oferta termina en <span id="temporizadorMobile"></span>
+              </div>
+            </div>      
+        </div>
+          <div class="col-9 col-sm-6 mx-auto py-1 m-0 p-0">
+            <div class="row">
+              <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+                <div class="precio-antes-p m-0">Antes $<span class="tachado"><span id="precio-anterior-alerta"></span></span></div>
+              </div>
+              <div class="col-6 py-2 text-center">
+                <div class="precio m-0">ARS $ <span id="precio-nuevo-alerta"></span></div>
+              </div>
+            </div>
+            <a href="#header" class="btn btn-buy animate-hover py-2 mb-2 text-center ps-4">
+              ¡Inscribirme Ahora! <i class="fas fa-chevron-right me-3 ps-2 animate-right-3"></i>
+            </a>
+    
+          </div>
+        </div>
+      </div>
+      
 
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
+ 
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
-      crossorigin="anonymous"
-    ></script>
+
+    <!-- Swiper JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js" ></script>
+
+    <!-- Mobile alert -->
+    <script> 
+        
+     
+    const bannerTimer = document.getElementById("banner-timer");
+    const descriptionSection = document.getElementById("description");
+    const headerSection = document.getElementById("header");
+    const fixedDiv = document.getElementById("mobile-alert");
+    function handleScroll() {
+
+      const descriptionRect = descriptionSection.getBoundingClientRect();
+      const headerRect = headerSection.getBoundingClientRect();    
+    
+
+      
+      if ((descriptionRect.bottom <= 0 || descriptionRect.top >= window.innerHeight) && (headerRect.bottom <= 0 || headerRect.top >= window.innerHeight)) {
+        fixedDiv.style.display = "block"
+        bannerTimer.style.display = "none"
+      } else {
+        fixedDiv.style.display = "none";
+        bannerTimer.style.display = "block"
+        
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", function() {
+      fixedDiv.style.display = "none";
+    });
+
+    window.addEventListener("scroll", handleScroll);
+    </script>
+    <script>
+    function countdownTimer(days, hours, minutes, seconds) {
+        const temporizadorElement = document.getElementById('temporizador');
+        const temporizadorElementMobile = document.getElementById('temporizadorMobile');
+
+
+        let tiempoRestante = ((days * 24 + hours) * 60 + minutes) * 60 + seconds; // Convertir todo a segundos
+        let intervalo;
+
+        // Función para formatear el tiempo en dígitos de dos cifras
+        function formatTime(time) {
+            return time < 10 ? `0${time}` : `${time}`;
+        }
+
+        // Función para actualizar el temporizador
+        function updateTemporizador() {
+            const remainingDays = Math.floor(tiempoRestante / (60 * 60 * 24));
+            const remainingHours = Math.floor((tiempoRestante % (60 * 60 * 24)) / (60 * 60));
+            const remainingMinutes = Math.floor((tiempoRestante % (60 * 60)) / 60);
+            const remainingSeconds = Math.floor(tiempoRestante % 60);
+
+            temporizadorElement.innerHTML = `${formatTime(remainingDays)} días ${formatTime(remainingHours)} Hrs ${formatTime(remainingMinutes)} Min ${formatTime(remainingSeconds)} Seg`;
+            temporizadorElementMobile.innerHTML= `${formatTime(remainingDays)} días ${formatTime(remainingHours)} Hrs ${formatTime(remainingMinutes)} Min ${formatTime(remainingSeconds)} Seg`;
+
+            if (tiempoRestante <= 0) {
+            clearInterval(intervalo);
+            // Reiniciar el temporizador a 1 día y 20 horas
+            countdownTimer(1, 20, 0, 0);
+            } else {
+            tiempoRestante--;
+            }
+        }
+        intervalo = setInterval(updateTemporizador, 1000);
+    }
+      
+        // IMPORTANTE AJUSTAR PARA PODER DEFINIR LA DURACION DEL TEMPORIZADOR DEL BANNER SUPERIOR
+        //Duración de la oferta en días, horas, minutos y segundos
+        const duracionOferta = {
+        days: 0,
+        hours: 0,
+        minutes: 1,
+        seconds: 0
+        };
+
+        countdownTimer(duracionOferta.days, duracionOferta.hours, duracionOferta.minutes, duracionOferta.seconds);
+
+    </script>
+    <script>
+        //VARIABLES DINAMICAS PARA EL PRECIO DEL CURSO, AJUSTA EL PRECIO TANTO EN MOBILE COMO EN DESKTOP
+
+        // Precio del curso antiguo
+        const precio_anterior = 7698;
+        // Precio del curso actual Modificar para actualizar el precio 
+        const precio_nuevo = 3849; 
+
+        // calcula cual es el monto de ahorro
+        const ahorro = precio_anterior - precio_nuevo;
+        // calcula cual es el porcentaje de ahorro
+        const porcentaje_descuento = Math.ceil(((precio_anterior - precio_nuevo) / precio_anterior) * 100);
+
+        const precioAnteriorDesktop = document.getElementById("precio_anterior-desktop");
+        const ahorroDesktop = document.getElementById("ahorro-desktop");
+        const precioNuevoDesktop = document.getElementById("precio_nuevo-desktop");
+        const porcentajeDescuentoDesktop = document.getElementById("porcentaje-descuento-desktop");
+        const precioAnterior = document.getElementById("precio_anterior");
+        const ahorroMobile = document.getElementById("ahorro");
+        const precioNuevoMobile = document.getElementById("precio_nuevo");
+        const porcentajeMobile = document.getElementById("porcentaje-descuento");
+        const precioAnteriorMobileAlert = document.getElementById("precio-anterior-alerta");
+        const precioNuevoMobileAlert = document.getElementById("precio-nuevo-alerta");
+       
+
+
+        precioAnteriorDesktop.innerHTML = `${precio_anterior}`;
+        ahorroDesktop.innerHTML = `${precio_nuevo}`;
+        precioNuevoDesktop.innerHTML = `${ahorro}`;
+        porcentajeDescuentoDesktop.innerHTML = `${porcentaje_descuento}`;
+
+        precioAnterior.innerHTML = `${precio_anterior}`;
+        ahorroMobile.innerHTML = `${precio_nuevo}`;
+        precioNuevoMobile.innerHTML = `${ahorro}`;
+        porcentajeMobile.innerHTML = `${porcentaje_descuento}`;
+
+        precioAnteriorMobileAlert.innerHTML = `${precio_anterior}`;
+        precioNuevoMobileAlert.innerHTML = `${precio_nuevo}`;
+        
+    </script>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+
 
 </body>
 </html>
