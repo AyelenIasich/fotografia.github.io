@@ -9,29 +9,59 @@
     /* General settings */
     --main-color: #008BCC; 
     /* Header */
-    --bg-banner-main:#1a1a18;
-
-    
-
+    --bg-black-main:#1a1a18;   
     /* Font colors */
-    --font-banner-main:#fff ;
-   
+    --font-banner-main:#fff ;   
     /* Section */ 
     --bg-card-review-base: rgba(255, 255, 255, 0.9);
+    --bg-buy-boton:#80c212;
+    --bg-body-color: #F8F9FA;
+
 }
 
+
+/* ================= GENERAL SETTINGS ======================== */
 body{
     background-color:#F8F9FA!important;    
     font-size: 1.125em;
 }
-
-/* ================= GENERAL SETTINGS ======================== */
-
 .bolder{
     font-weight: 800;
 }
 .bolder900{
     font-weight: 900;
+}
+.bg-black1{
+    background: #1a1a18;    
+}
+
+
+/* ======================= NAVBAR ============== */
+
+.logo{
+    height:80px;
+}
+.navbar{
+    background-color:#F8F9FA;
+}
+.dropdown-menu.center {
+    transform: translateX(3%);
+    left: 35% !important;
+    right: auto !important;
+}
+/* ============= Boton Whatsapp ================ */
+
+#btn-whatsapp {
+    border: none ;
+    color: white ;
+    font-weight: 500;
+    box-shadow: inset 0 0 0 0 rgba(37,211,102,1) ;
+    transition: ease-out 0.5s;
+    background: rgba(37,211,102,1);
+}
+#btn-whatsapp:hover {
+    border: none;
+    box-shadow: inset 500px 0 0 0 rgb(29,164,80);
 }
 
 /* ====================== HEADER =================== */
@@ -40,14 +70,61 @@ body{
 }
 
 .BANNERMAIN{
-    background-color:var(--bg-banner-main);   
+    background-color:var(--bg-black-main);   
     color:var(--font-banner-main);
+    /* height: 24em; */
 
+}
+
+/* =============== YOUTUBE BUTTON =============== */
+
+#yt-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+} 
+
+.yt-button a i{
+color: #fff;
+font-size: 1.1em;
+padding-top: 5px;
+} 
+
+.yt-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FF0000;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;  
+    border-radius:50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: latido 2s infinite;
+}
+
+@keyframes latido {
+    0% {
+      transform:translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform:translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+      transform:translate(-50%, -50%) scale(1);
+    }
   }
 
+
+/*====================== SECTIONS ================== */
+/*============ DESCRIPTION ================== */
 .title-header{
     font-size: 1.125em;
-  }
+}
 
 .title-section{
     color: var(--main-color);
@@ -60,44 +137,19 @@ body{
 
 .info-2{
     font-size:0.875em;
-
-
 }
 
-
- @media  (min-width:768px) {
-
+@media (max-width:361px) {
+    .stars{
+        padding-top: 0.2em; 
+     }
+}
+@media (min-width:375px) {
     .stars{
         border-left: 1px solid #fff; 
      }
-  }
-
-
-/* ======================= NAVBAR ============== */
-
-.logo{
-    height:80px;
 }
 
-.navbar{
-    background-color:#F8F9FA;
-}
-/* ============= Boton Whatsapp ================ */
-
-#btn-whatsapp {
-    border: none ;
-    color: white ;
-    font-weight: 500;
-    box-shadow: inset 0 0 0 0 rgba(37,211,102,1) ;
-    transition: ease-out 0.5s;
-    background: rgba(37,211,102,1);
-
-}
-
-#btn-whatsapp:hover {
-    border: none;
-    box-shadow: inset 500px 0 0 0 rgb(29,164,80);
-}
 
 
 /* ================= ICONS ============================ */
@@ -112,16 +164,17 @@ body{
 
 @media  (min-width: 992px) {
     .padding-lg{
-         padding-left:4%; 
+         padding-left: 10%!important;
     }
   }
-
 
 li a:hover{
     color: var(--main-color)!important;
 }
 
-
+.c{
+    transform: translateY(6px);
+}
 
 /* ================= CARD REVIEW ============ */
 
@@ -199,26 +252,374 @@ li{
     font-weight:800;
 }
 
+/* =================== COMO FUNCIONA =============== */
+
+.como-funciona h5, .cursos-relacionados h5{
+    color: var(--main-color);
+    font-weight: 900;
+}
+.como-funciona .card {    
+    box-shadow: 0 5px 10px -5px rgba(0 0 0 / 30%);    
+    border-bottom: 4px solid var(--main-color);
+    border-radius: 6px;
+    transition: 0.5s ease;
+    cursor: pointer;
+    width: 14em;
+}
+.como-funciona .card:hover, .cursos-relacionados .card:hover{
+transform: scale(1.05);
+color: black;
+}
+.como-funciona  .container-img-card{
+    height: 14em;
+}
+
+.como-funciona .card img{
+    border-radius: 6px;
+} 
+/* =========== PARA QUIEN ES EL CURSO ============================= */
+
+#destinatarios .card{
+    box-shadow: none;
+    border: none;
+    background-color: #eeeff0;
+    border-radius: 5px;
+}
+#destinatarios .extra-info{
+    box-shadow: none;
+    border: none;
+    background-color:#fff;
+    border-radius: 5px;
+    
+}
+#destinatarios .extra-info .main-color{
+    color:var(--main-color); ;
+    
+}
+
+#destinatarios .container-logo{
+    max-height: 100px ;
+}
+#destinatarios .container-logo img{
+    max-height: 100px ;
+}
+
+@media screen and (min-width: 320px ) and (max-width:576px){
+
+    #destinatarios .container-logo img{
+        height: 4em !important ;
+}
+}
+
+
+/* ===== QUE INCLUYE SECTION ========= */
+
+.punto{
+    height: 8px;
+    width: 8px;
+    background:  var(--main-color);
+    border-radius: 50%;
+    outline: 4px solid rgba(0, 139, 204, 0.23);
+}
+
+ .accordion-button:not(.collapsed) {
+    color:  #fff !important ;
+    background-color: var(--main-color)!important ;  
+}
+
+.accordion-button:not(.collapsed)::after {
+   filter: brightness(100)!important ;
+
+}
+
+.accordion-item{
+    border: none!important ;
+    border-radius: 5px!important ;
+}
+.accordion{
+    border-radius: 5px!important ;
+}
+.accordion-button{
+    border: none!important ;
+    border-radius: 5px!important ;
+}
+.accordion-button:hover{
+    background:  var(--main-color)!important ;
+}
+/* =================== SECTION FOTOS =================== */
+#fotos swiper-container {
+    width: 100%;
+    height: 100%;  
+
+}
+
+#fotos swiper-slide {
+    text-align: center;
+    font-size: 18px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+
+#fotos swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 5px 10px -5px rgba(0 0 0 / 30%);
+
+}
+
+
+
+/* =================== CURSOS RELACIONADOS =============== */
+.cursos-relacionados .card{
+    background: #f8f9fa;
+    border-bottom: 4px solid var(--main-color);
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
+    transition: 0.5s ease;
+    cursor: pointer;
+    width: 19em;
+}
+.cursos-relacionados .container-img-card {
+    height: 12em;
+    
+}
+.cursos-relacionados .container-img-card img{
+    height: 100%;
+    border-radius: 10px;
+}
+.cursos-relacionados a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* ============ FOOTER ============================= */
+.footer .social-icons i{
+    font-size:1.5em;
+    color: #aaa ;
+}
+
+.footer .footer-links a {
+    text-decoration: none;
+    color: #aaa ;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer .footer-links a:hover{   
+    color:var(--main-color)!important;   
+}
+
+.footer .social-icons .fa-whatsapp:hover{
+    color:rgba(37,211,102,1) ; 
+}
+.footer .social-icons .fa-facebook:hover{
+    color:var(--main-color);  
+}
+.footer .social-icons .fa-instagram:hover{
+    color:#8A3AB9; 
+}
+.footer .social-icons .fa-envelope:hover{
+    color:#D93025; 
+}
+
+ #header .garantia-mobile{
+    background: hsl(0 30% 85% / 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 5px 10px -5px rgba(255, 255, 255, 0.3);
+  
+    border-radius: 6px;
+    z-index: 4;
+} 
+.small-timer{
+    font-size:0.6em;
+    /* background-color:rgba(255, 255, 255, 0.3); */
+   
+    color:  #008BCC;
+    background-color: #F8F9FA;
+    font-weight: 600;
+    border-radius: 1px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+
+@media screen and (max-width:341px){
+    #header .descuento{
+        font-size: 0.95em;
+    }
+    #header .precio {
+        color: #fff;
+        font-size: 1.2em;
+    }
+
+    #header  .btn-price{
+        font-size: 0.8em;
+    }
+    #mobile-alert .precio-antes-p{      
+        font-size: 0.8em;
+    }
+    #mobile-alert .precio{
+        font-size: 1em;
+        color: #fff;
+    }
+    #mobile-alert   .btn-buy{
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (min-width:341px){
+    #header .descuento{
+        font-size: 1.3em;
+    }
+    #header .precio{
+        color: #fff;
+        font-size: 1.5em;
+    }
+    #mobile-alert .precio-antes-p{      
+        font-size: 0.8em;
+    }
+    #mobile-alert .precio{
+        font-size: 1em;
+        color: #fff;
+    }
+    #mobile-alert   .btn-buy{
+        font-size: 0.8em;
+    }
+
+} 
+
 @media screen and (min-width: 320px) and (max-width:425px)   {
-    .bonus-description h5{
+    #mobile-alert .precio-antes-p{      
+        font-size: 0.8em;
+    }
+    #mobile-alert .precio{
+        font-size: 1em;
+        color: #fff;
+    }
+    #mobile-alert   .btn-buy{
+        font-size: 0.8em;
+    }
+    #header .garantia-mobile p{
+        font-size: 0.7em;
+
+    }
+    #banner-timer h5 {      
+        font-size: 0.9em!important;
+    }
+    #banner-timer span {      
+        font-size: 0.9em!important;
+    }
+
+    .bonus-description h5 , #header h5{
         font-size: 0.8em!important;
     }
-    .bonus-description h4{
+    .descripcion-section h4, .bonus-description h4{
         font-size: 0.899em!important;
     }
+    #destinatarios .subtitulo {
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+    .descripcion-section p {
+        font-size: 0.8em;
+    }
+    .descripcion-section .items-list {
+        font-size: 0.789em!important;
+    }
+
 
     .review-img {
         height: 3.5em;
     }
-    .bonus-header p{
-        font-size: 0.797em;
+    
+    .bonus-header p,  #header p{
+        font-size: 0.8em;
     }
-    .bonus-header .title-section{
+    #header .title{
+        font-size:  1.19em;
+    }
+    #header .small-p, .small-p{
+        font-size: 0.65em;
+    }
+
+    
+    .descripcion-section h2, .bonus-header .title-section{
+        font-size: 0.935em;
+    }
+    .descripcion-section h4, .bonus-header h4 {
         font-size: 1em;
     }
+    
+    .yt-button{
+        height: 40px;
+        width: 40px;
+    }
+    .footer .footer-links a {     
+        font-size: 0.8em;       
+    }
+
+    .como-funciona p{
+        font-size: 0.68em ;
+    }
+    .como-funciona .swiper-button-next, .como-funciona .swiper-button-prev{
+        display: none;
+    }
+    #destinatarios .container-logo img{
+        width: 100%;
+    }
+    .swiperFotos img{
+        border-radius: 5px;
+        height: 100%;
+        object-fit: cover;
+    }
+    .swiperFotos .swiper-slide{
+        height: 14em;
+    }
+
+
+
   }
 
   @media screen and (min-width: 425px) and (max-width:768px)   {
+    #banner-timer h5{
+        font-size: 1em;
+    }
+    #banner-timer #temporizador{
+        font-size: 1em;
+    }
+
+    #mobile-alert .precio-antes-p{      
+        font-size: 0.8em;
+    }
+    #mobile-alert .precio{
+        font-size: 1.1em;
+        color: #fff;
+    }
+    #mobile-alert   .btn-buy{
+        font-size: 1em;
+    }
+       
+    .descripcion-section h4, .bonus-description h4{
+        font-size: 0.899em!important;
+    }
+    .descripcion-section p {
+        font-size: 0.89em;
+    }
+    #destinatarios .subtitulo {
+        font-size: 0.92em;
+        font-weight: 600;
+    }
+    .descripcion-section .items-list {
+        font-size: 0.8em!important;
+    }
+    .descripcion-section h2, .bonus-header .title-section{
+        font-size: 1.3em;
+    }
     .bonus-description h5{
         font-size: 0.9em!important;
     }
@@ -232,8 +633,21 @@ li{
     .bonus-header p{
         font-size: 0.89em;
     }
-    .bonus-header .title-section{
-        font-size: 1.35em;
+ 
+    #header .title{
+        font-size:  1.5em;
+    }
+    #header .small-p , .small-p{
+        font-size: 0.75em;
+    }
+    #header p{
+        font-size: 0.8em;
+    }
+    .como-funciona p{
+        font-size: 0.68em ;
+    }
+    .como-funciona .swiper-button-next, .como-funciona .swiper-button-prev{
+        display: none;
     }
   }
 
@@ -254,51 +668,32 @@ li{
     }
 }
 
-  @media screen and (min-width: 768px) and (max-width:992px)   {
-    .bonus-description h5{
-        font-size: 0.9em!important;
-    }
-    .bonus-description h4{
-        font-size: 1.12em!important;
-    }
-
-    .review-img {
-           height: 4em;
-    }
-    .bonus-header p{
-        font-size: 0.89em;
-    }
-    .bonus-header .title-section{
-        font-size: 1.35em;
-    }
-  }
-
-  
-  @media screen and (min-width: 1200px) {
-    .review-img{
-        height: 6em;
-    }
-
-  }
 
 
+
+/* ==================== STICKY CARD ================= */
+/* @media screen and (min-width: 425px) {
+    #container-sticky-video{
+        max-height: 4em;
+    }
+} */
 
 
 .sitcky-card{
-
-    background:var(--bg-banner-main);
+    background:var(--bg-black-main);
     border-radius: 6px;
     position: relative;
+    z-index: 1; 
+    
 }
 @media screen and (min-width: 768px) {
 
     .sitcky-card{
         background: #fff;
+        z-index: 1;
     
     }
 }
-
-
 
 .sitcky-card img{
     background: #fff;
@@ -307,54 +702,683 @@ li{
     border-radius: 6px;
 
 }
+@media screen and (min-width: 768px)  and(max-width: 1200px){
+    
+    #info-header{
+     
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
 
-/* =============== YOUTUBE BUTTON =============== */
+#buying-card-sticky{
+    position: sticky!important;
+    top:3em;  
+}
 
-#yt-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.garantia-container{
+    background: var(--bg-body-color);
+    border-radius: 5px;
+}
+
+.garantia-container p{
+    font-size: 0.75em;
+}
+
+.img-garantia{
+    width: 100%;
     height: 100%;
-  }
+    object-fit:contain;
+}
 
-  
-.yt-button {
+
+.main-row  {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-row #first-column {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #first-column, #second-column  {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #FF0000;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;  
-    border-radius:50%;
+    flex-direction: column;
+  }
+
+  #second-column {
+    flex: 1;
+  }
+}
+.b-card {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0/50%);
 }
 
-.yt-button a i{
-color: #fff;
-font-size: 1.1em;
-padding-top: 5px;
+#banner-timer {
+    background: var(--main-color);
+    color: #fff;
+    font-size: 0.8em;
+}
+
+
+.BANNERMAIN3{
+    background-color:var(--bg-black-main); 
+    /* height: 24em; */
+
+}
+
+
+
+footer{
+    background: var(--bg-black-main);
+    color: #fff;
+}
+
+.tachado {
+    text-decoration: line-through;
+  }
+.btn-price   {
+    border: none !important;
+    color: white !important;
+    font-weight: 500!important;
+    background: var(--main-color)!important;
+}
+
+
+.descuento{
+    color:var(--main-color);
+    font-size: 1.5em;
+    font-weight: 800;
+}
+.precio{
+    color:var(--main-color);
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.btn-buy{
+    border: none !important;
+    color: white !important;
+    font-weight: 500!important;
+    background:var(--bg-buy-boton)!important;
+    width: 100%;
+}
+.btn-buy:hover{
+    background:#6ca30f!important;
+}
+
+.animate-up-3,
+.animate-right-3,
+.animate-down-3,
+.animate-left-3,
+.scale-up-3,
+.scale-down-3 {
+  transition: all 0.2s ease;
+}
+
+.animate-right-3:hover,
+.animate-hover:hover .animate-right-3 {
+  transform: translate(3px, 0);
+}
+
+.img-logos-pagos{
+    height: 100%;
+    width: 100%;
 }
 
 
 
 
 
+
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .footer h4{
+        font-size:1.1em;
+    }
+    .footer .social-icons i{
+        font-size:1.5em;
+   
+    }
+    .footer .footer-links a {
+        font-size: 0.9em;
+       
+    }
+
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #banner-timer h5, #banner-timer #temporizador{
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+    #banner-timer{
+        display: block !important;
+    }
+    .bonus-description h5{
+        font-size: 0.9em!important;
+    }
+    .bonus-description h4{
+        font-size: 1.12em!important;
+    }
+    .review-img {
+           height: 4em;
+    }
+    .bonus-header p {
+        font-size: 0.89em;
+        margin-bottom: 0.8em;     
+    }
+    #header p{
+        font-size: 0.85em;
+      
+    }
+
+    #header .small-p  ,.small-p{
+        font-size: 0.79em;
+    }
+    #header .title{
+        font-size:  1.8em;       
+    }
+    .bonus-description p {
+        font-size: 0.84em;
+    }
+
+     /* STICKY CARD */
+    .sitcky-card img {
+        width:100%;
+        height: 188px;     
+      
+    }
+    .sitcky-card{
+        width:309px; 
+    }
+
+    .BANNERMAIN {
+        height: 16em;
+    }
+    .c {
+        transform: translateY(20px);
+    }
+    .b-card{
+        width:309px;
+    }
+    .precio-antes-p{
+        font-size: 0.8em ;
+    }
+    .btn-price{
+        font-size: 0.8em!important;
+    }
+    .precio {      
+        font-size: 1.2em;        
+    }
+    .descuento{
+        font-size: 1.2em;
+    }
+    .btn-buy{
+        font-size: 0.9em!important;
+    }
+    .title-card-sticky{
+        font-size: 0.9em;
+    }
+    .sections p {
+        font-size: 0.7em;
+    }
+    .garantia-container p {
+        font-size: 0.6em;
+    }
+
+    .estudiantes {
+        font-size: 0.69em;
+    }
+    /* DESCRIPTION SECTION */
+    .descripcion-section h2, .bonus-header .title-section{
+        font-size: 1.3em;
+    }
+    .descripcion-section h4, .bonus-header h4{
+        font-size: 1.2em;
+    }
+    .descripcion-section p {
+        font-size: 0.85em;
+    }
+    #destinatarios .subtitulo {
+        font-size: 0.95em;
+        font-weight: 600;
+    }
+    .descripcion-section .items-list{
+        font-size: 0.84em!important;
+    }
+    .footer .social-icons i{
+        font-size:1.5em;
+   
+    }
+    .footer .footer-links a {
+        font-size: 0.9em;
+       
+    }
+    .como-funciona p{
+        font-size: 0.8em ;
+    }
+    .cursos-relacionados .container-img-card {
+        height: 12em;
+    }
+    
+    
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    #banner-timer h5, #banner-timer #temporizador{
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+    #banner-timer{
+        display: block !important;
+    }
+
+    .bonus-description h5{
+        font-size: 0.9em!important;
+    }
+    .bonus-description h4{
+        font-size: 1.12em!important;
+    }
+    .review-img {
+           height: 5em;
+    }
+    .bonus-header p {
+        font-size: 0.89em;
+        margin-bottom: 0.8em;     
+    }
+    #header p{
+        font-size: 0.9em;      
+    }
+
+    #header .small-p  ,.small-p{
+        font-size: 0.85em;
+    }
+    #header .title{
+        font-size:  2em;
+
+    }
+    .bonus-description p {
+        font-size: 0.84em;
+    }
+
+     /* STICKY CARD */
+    .sitcky-card img {
+        width:100%;
+        height: 255px;        
+        z-index: 2;
+    }
+    .sitcky-card{
+        width:390px; 
+    }
+
+    .BANNERMAIN {
+        height: 20em;
+    }
+    .c {
+        transform: translateY(20px);
+    }
+    .b-card{
+        width:390px; 
+    }
+    .precio-antes-p{
+        font-size: 0.9em ;
+    }
+    .btn-price{
+        font-size: 0.9em!important;
+    }
+    .precio {      
+        font-size: 1.4em;        
+    }
+    .descuento{
+        font-size: 1.4em;
+    }
+    .btn-buy{
+        font-size: 1.1em!important;
+    }
+    .title-card-sticky{
+        font-size: 0.9em;
+    }
+    .sections p {
+        font-size: 0.8em;
+    }
+    .garantia-container p {
+        font-size: 0.7em;
+    }
+
+    .estudiantes {
+        font-size: 0.8em;
+    }
+    /* DESCRIPTION SECTION */
+    .descripcion-section h2, .bonus-header .title-section{
+        font-size: 1.3em;
+    }
+    .descripcion-section h4, .bonus-header h4{
+        font-size: 1.2em;
+    }
+    .descripcion-section p {
+        font-size: 0.9em;
+    }
+    
+    .descripcion-section .items-list{
+        font-size: 0.89em!important;
+    }
+    .footer .social-icons i{
+        font-size:1.9em;
+   
+    }
+    .footer .footer-links a {
+        font-size: 0.9em;
+       
+    }
+    .como-funciona .card{
+        width: 16em;
+    }
+    .como-funciona  .container-img-card{
+        height: 18em
+    }
+    .como-funciona p{
+        font-size: 0.7em ;
+    }
+    #destinatarios .subtitulo {
+        font-size: 0.98em;
+        font-weight: 600;
+    }
+
+
+    
+}
+
+@media screen and (min-width: 1200px) and  (max-width: 1400px){
+    #banner-timer h5, #banner-timer #temporizador{
+        font-size: 1.3em;
+        font-weight: 600;
+    }
+    #banner-timer{
+        display: block !important;
+    }
+
+    #info-header{
+        z-index: 3;        
+    }
+
+    .bonus-description h5{
+        font-size: 0.9em!important;
+    }
+    .bonus-description h4{
+        font-size: 1.12em!important;
+    }
+    .review-img {
+           height: 6em;
+    }
+    .bonus-header p {
+        font-size: 0.89em;
+        margin-bottom: 0.8em;     
+    }
+
+    #header p{
+        font-size: 1em;
+      
+    }
+
+    #header .small-p  ,.small-p{
+        font-size: 0.9em;
+    }
+    #header .title{
+        font-size:  2em;
+       
+    }
+    .bonus-description p {
+        font-size: 0.84em;
+    }
+
+     /* STICKY CARD */
+    .sitcky-card img {
+        width:100%;
+        height: 255px;        
+        z-index: 2;
+    }
+    .sitcky-card{
+        width:430px; 
+    }
+
+    .BANNERMAIN {
+        height: 20em;
+    }
+    .c {
+        transform: translateY(20px);
+    }
+    .b-card{
+        width:430px; 
+    }
+    .precio-antes-p{
+        font-size: 0.9em ;
+    }
+    .btn-price{
+        font-size: 0.9em!important;
+    }
+    .precio {      
+        font-size: 1.4em;        
+    }
+    .descuento{
+        font-size: 1.4em;
+    }
+    .btn-buy{
+        font-size: 1.1em!important;
+    }
+    .title-card-sticky{
+        font-size: 0.9em;
+    }
+    .sections p {
+        font-size: 0.8em;
+    }
+    .garantia-container p {
+        font-size: 0.7em;
+    }
+
+    .estudiantes {
+        font-size: 0.8em;
+    }
+    /* DESCRIPTION SECTION */
+    .descripcion-section h2, .bonus-header .title-section{
+        font-size: 1.5em;
+    }
+    .descripcion-section h4, .bonus-header h4{
+        font-size: 1.4em;
+    }
+    .descripcion-section p {
+        font-size: 0.9em;
+    }
+    .descripcion-section .items-list{
+        font-size: 0.89em!important;
+    }
+    .footer .social-icons i{
+        font-size:1.8em;
+   
+    }
+    .footer .footer-links a {
+        font-size: 1.01rem;
+       
+    }
+    .como-funciona p{
+        font-size: 0.7em ;
+    }
+    .como-funciona .swiper-button-next, .como-funciona .swiper-button-prev{
+        display: none;
+    }
+    .como-funciona .card{
+        width: 12em;
+    }
+    .como-funciona .container-img-card{
+        height: 13em;
+    }
+    #destinatarios .subtitulo {
+        font-size: 1em;
+        font-weight: 600;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    #banner-timer h5, #banner-timer #temporizador{
+        font-size: 1.3em;
+        font-weight: 600;
+    }
+    #banner-timer{
+        display: block !important;
+    }
+    #info-header{
+        z-index: 3;
+        
+    }
+
+    .bonus-description h5{
+        font-size: 0.9em!important;
+    }
+    .bonus-description h4{
+        font-size: 1.12em!important;
+    }
+    .review-img {
+           height: 6em;
+    }
+    .review {
+        left:15%;
+    }
+    .bonus-header p {
+        font-size: 0.89em;
+        margin-bottom: 0.8em;     
+    }
+    #header p{
+        font-size: 1em;
+      
+    }
+
+    #header .small-p  ,.small-p{
+        font-size: 0.9em;
+    }
+    #header .title{
+        font-size:  2.28em;
+       
+    }
+    .bonus-description p {
+        font-size: 0.84em;
+    }
+
+     /* STICKY CARD */
+    .sitcky-card img {
+        width:100%;
+        height: 255px;        
+        z-index: 2;
+    }
+    .sitcky-card{
+        width:450px; 
+    }
+
+    .BANNERMAIN {
+        height: 20em;
+    }
+    .c {
+        transform: translateY(20px);
+    }
+    .b-card{
+        width:450px; 
+    }
+    .precio-antes-p{
+        font-size: 0.9em ;
+    }
+    .btn-price{
+        font-size: 0.9em!important;
+    }
+    .precio {      
+        font-size: 1.8em;        
+    }
+    .descuento{
+        font-size: 1.8em;
+    }
+    .btn-buy{
+        font-size: 1.1em!important;
+    }
+    .title-card-sticky{
+        font-size: 0.9em;
+    }
+    .sections p {
+        font-size: 0.84em;
+    }
+    .garantia-container p {
+        font-size: 0.75em;
+    }
+
+    .estudiantes {
+        font-size: 0.9em;
+    }
+    /* DESCRIPTION SECTION */
+    .descripcion-section h2, .bonus-header .title-section{
+        font-size: 2em;
+    }
+    .descripcion-section h4, .bonus-header h4{
+        font-size: 1.8em;
+    }
+    .descripcion-section p {
+        font-size: 0.9em;
+    }
+    
+    .descripcion-section .items-list{
+        font-size: 0.89em!important;
+    }
+
+    .footer .footer-links a {
+        text-decoration: none;
+        color: #aaa!important;
+        font-size: 1.01rem;
+        font-weight: 500;
+    }
+    .footer .social-icons i {
+        font-size: 2.1em;     
+    }
+
+    .como-funciona p{
+        font-size: 0.85em;  
+    }
+    #destinatarios .subtitulo {
+        font-size: 1em;
+        font-weight: 600;
+    }
+}
+
+#banner-timer{
+    z-index: 5!important;
+    animation: fadeIn 0.5s ease;
+}
+
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   
-  .yt-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: latido 2s infinite;
+  #mobile-alert {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* height: 50px; */
+    background-color: var(--bg-black-main); 
+    color: #fff;
+    z-index: 15;
+    animation: fadeIn 0.5s ease;
+
   }
-  @keyframes latido {
-    0% {
-      transform:translate(-50%, -50%) scale(1);
-    }
-    50% {
-      transform:translate(-50%, -50%) scale(1.2);
-    }
-    100% {
-      transform:translate(-50%, -50%) scale(1);
-    }
-  }
+  
+  .modal {
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
