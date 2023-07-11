@@ -892,16 +892,16 @@ footer{
      /* STICKY CARD */
     .sitcky-card img {
         width:100%;
-        height: 188px;     
+        height: 357px;     
       
     }
     .sitcky-card{
-        width:309px; 
+        width:571px; 
     }
 
-    .BANNERMAIN {
+    /* .BANNERMAIN {
         height: 16em;
-    }
+    } */
     .c {
         transform: translateY(20px);
     }
