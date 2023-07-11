@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../i/logo200.svg" type="image/x-icon">
+    <link rel="icon" href="./img/logo200.svg" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -806,7 +806,7 @@
                             <img src="./img/GALERIASABERFOTOGRAFIA4.jpg" class="" alt="Foto 4">
                         </swiper-slide>
                         <swiper-slide class="pb-5">
-                            <img src="../img/GALERIASABERFOTOGRAFIA5.jpg" class="" alt="Foto 5">
+                            <img src="./img/GALERIASABERFOTOGRAFIA5.jpg" class="" alt="Foto 5">
                         </swiper-slide>
                         <swiper-slide class="pb-5">
                             <img src="./img/GALERIASABERFOTOGRAFIA6.jpg" class="" alt="Foto 6">
@@ -968,7 +968,7 @@
                                 </div>
             
                                 <div class="d-none d-xl-block col-xl-7 ">
-                                    <p class="precio-antes-p" >Antes $<span class="tachado"><?php echo $precio_anterior ?></span>  <span class=" btn btn-price">Ahorra $<?php echo $ahorro; ?></span></p>
+                                    <p class="precio-antes-p" >Antes $<span class="tachado"><span id="precio_anterior-desktop2"></span></span>  <span class=" btn btn-price">Ahorra $<span id="ahorro-desktop2"></span></span></p>
                                     <p class="precio d-none d-xl-block ">ARS $<span id="precio_nuevo-desktop"></span></p>
                                 </div>
                                 <div class="col-6 d-xl-none py-2 text-center ">
@@ -1319,21 +1319,29 @@
         const porcentaje_descuento = Math.ceil(((precio_anterior - precio_nuevo) / precio_anterior) * 100);
 
         const precioAnteriorDesktop = document.getElementById("precio_anterior-desktop");
+        const precioAnteriorDesktop2 = document.getElementById("precio_anterior-desktop2");
         const ahorroDesktop = document.getElementById("ahorro-desktop");
+        const ahorroDesktop2 = document.getElementById("ahorro-desktop2");
         const precioNuevoDesktop = document.getElementById("precio_nuevo-desktop");
         const porcentajeDescuentoDesktop = document.getElementById("porcentaje-descuento-desktop");
         const precioAnterior = document.getElementById("precio_anterior");
+
+        
         const ahorroMobile = document.getElementById("ahorro");
         const precioNuevoMobile = document.getElementById("precio_nuevo");
         const porcentajeMobile = document.getElementById("porcentaje-descuento");
+
         const precioAnteriorMobileAlert = document.getElementById("precio-anterior-alerta");
         const precioNuevoMobileAlert = document.getElementById("precio-nuevo-alerta");
        
 
 
         precioAnteriorDesktop.innerHTML = `${precio_anterior}`;
+        precioAnteriorDesktop2.innerHTML = `${precio_anterior}`;
         ahorroDesktop.innerHTML = `${precio_nuevo}`;
+        ahorroDesktop2.innerHTML = `${precio_nuevo}`;
         precioNuevoDesktop.innerHTML = `${ahorro}`;
+
         porcentajeDescuentoDesktop.innerHTML = `${porcentaje_descuento}`;
 
         precioAnterior.innerHTML = `${precio_anterior}`;
