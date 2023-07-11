@@ -44,11 +44,14 @@ body{
 .navbar{
     background-color:#F8F9FA;
 }
-.dropdown-menu.center {
-    transform: translateX(3%);
-    left: 35% !important;
-    right: auto !important;
+@media screen and (max-width:768px) {
+    .dropdown-menu.center {
+        transform: translateX(3%);
+        left: 35% !important;
+        right: auto !important;
+    }
 }
+
 /* ============= Boton Whatsapp ================ */
 
 #btn-whatsapp {
