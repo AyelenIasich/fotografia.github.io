@@ -16,6 +16,7 @@
     --bg-card-review-base: rgba(255, 255, 255, 0.9);
     --bg-buy-boton:#80c212;
     --bg-body-color: #F8F9FA;
+    --bg-body-checkout: #eaeaf4;
 
 }
 
@@ -36,6 +37,81 @@ body{
 }
 
 
+
+/* ================= CHECKOUT ========================= */
+.checkout-sub{
+    font-size:1em;
+}
+.list-group{
+    --bs-list-group-bg: var(--bg-body-checkout)!important;  
+    --bs-list-group-border-width: 0px!important; 
+}
+
+.carrito-tabla-precios{
+    border-bottom: 1px solid #ddd;
+}
+.bg-checkout{
+    background-color: var(--bg-body-checkout)!important;   
+}
+.carrito h1 {
+    font-weight: 800; 
+    font-size: 2em;         
+}
+.carrito h1 span{
+    color: var(--main-color);
+    
+}
+.container-iconos-checkout{
+    height: 2em;
+}
+
+.iconos-checkout {
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    border-radius: 15px;
+    position: relative;
+    height: 7em;    
+}
+.iconos-checkout p{
+    color: var(--main-color);
+    font-weight: 600;  
+}
+.icon-body-card{
+    position: absolute;
+    bottom: 0;
+}
+.checkout-review{
+    font-size: 1.3em;
+    color: var(--main-color);
+    font-weight: 600;  
+}
+.checkout-review-container{
+    font-size: 0.8em;
+}
+.btn-whatsapp-checkout{
+    font-size: 1.5em!important;
+    border-radius:25px!important;
+
+}
+.btn-whatsapp-checkout i{
+    font-size: 1.3em!important;
+  
+
+}
+.garantia-container-checkout{
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #cecece;
+   
+}
+.garantia-container-checkout p{
+    font-size: 0.8em;
+}
+
+.garantia-container-checkout .img-garantia{
+    width: 100%;
+    height: 52px;
+    object-fit:contain;
+}
 /* ======================= NAVBAR ============== */
 
 .logo{
@@ -75,7 +151,7 @@ body{
 .BANNERMAIN{
     background-color:var(--bg-black-main);   
     color:var(--font-banner-main);
-    /* height: 24em; */
+
 
 }
 
@@ -142,16 +218,7 @@ padding-top: 5px;
     font-size:0.875em;
 }
 
-@media (max-width:361px) {
-    .stars{
-        padding-top: 0.2em; 
-     }
-}
-@media (min-width:375px) {
-    .stars{
-        border-left: 1px solid #fff; 
-     }
-}
+
 
 
 
@@ -307,12 +374,6 @@ color: black;
     max-height: 100px ;
 }
 
-@media screen and (min-width: 320px ) and (max-width:576px){
-
-    #destinatarios .container-logo img{
-        height: 4em !important ;
-}
-}
 
 
 /* ===== QUE INCLUYE SECTION ========= */
@@ -370,7 +431,7 @@ color: black;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: 0 5px 10px -5px rgba(0 0 0 / 30%);
+
 
 }
 
@@ -439,9 +500,7 @@ color: black;
     z-index: 4;
 } 
 .small-timer{
-    font-size:0.6em;
-    /* background-color:rgba(255, 255, 255, 0.3); */
-   
+    font-size:0.6em; 
     color:  #008BCC;
     background-color: #F8F9FA;
     font-weight: 600;
@@ -497,6 +556,37 @@ color: black;
 } 
 
 @media screen and (min-width: 320px) and (max-width:425px)   {
+
+    .inputbox label {
+        font-size: 0.9em;
+    }
+    .checkout-lista p{
+        font-size: 0.9em ;
+    }
+    .tempo-container-checkout p{
+        font-size: 0.9em ;
+    }
+    .garantia-container-checkout p{
+        font-size: 0.7em ;
+    }
+    .checkout-sub {
+        font-size: 0.8em;
+    }
+    .carrito h4{
+        font-size:1.15em
+    }
+    .container-iconos-checkout{
+        height: 2em;
+    }
+
+    .iconos-checkout p{
+        font-size: 0.62em ;
+    }
+    .btn-whatsapp-checkout {
+        font-size: 1.2em!important;
+       
+    }
+
     #mobile-alert .precio-antes-p{      
         font-size: 0.8em;
     }
@@ -544,10 +634,10 @@ color: black;
         font-size: 0.8em;
     }
     #header .title{
-        font-size:  1.19em;
+        font-size:  1.5em;
     }
     #header .small-p, .small-p{
-        font-size: 0.65em;
+        font-size: 0.7em;
     }
 
     
@@ -572,9 +662,11 @@ color: black;
     .como-funciona .swiper-button-next, .como-funciona .swiper-button-prev{
         display: none;
     }
+
     #destinatarios .container-logo img{
         width: 100%;
     }
+
     .swiperFotos img{
         border-radius: 5px;
         height: 100%;
@@ -589,6 +681,40 @@ color: black;
   }
 
   @media screen and (min-width: 425px) and (max-width:768px)   {
+    .btn-whatsapp-checkout {
+        font-size: 1.1em!important; 
+    }
+    .inputbox label {
+        font-size: 0.9em;
+    }
+    .checkout-lista p{
+        font-size: 0.9em ;
+    }
+    .tempo-container-checkout p{
+        font-size: 0.9em ;
+    }
+    .garantia-container-checkout p{
+        font-size: 0.7em ;
+    }
+    .checkout-sub {
+        font-size: 0.9em;
+    }
+    .carrito h4{
+        font-size:1.15em
+    }
+    .checkout-review{
+        font-size: 1.3em;       
+    }
+    .checkout-review-container{
+        font-size: 0.9em;
+    }
+    .container-iconos-checkout{
+        height: 2.3em;
+    }
+
+    .iconos-checkout p{
+        font-size: 0.7em ;
+    }
     #banner-timer h5{
         font-size: 1em;
     }
@@ -638,7 +764,7 @@ color: black;
     }
  
     #header .title{
-        font-size:  1.5em;
+        font-size:  1.6em;
     }
     #header .small-p , .small-p{
         font-size: 0.75em;
@@ -675,11 +801,7 @@ color: black;
 
 
 /* ==================== STICKY CARD ================= */
-/* @media screen and (min-width: 425px) {
-    #container-sticky-video{
-        max-height: 4em;
-    }
-} */
+
 
 
 .sitcky-card{
@@ -706,6 +828,7 @@ color: black;
 
 }
 @media screen and (min-width: 768px)  and(max-width: 1200px){
+
     
     #info-header{
      
@@ -771,7 +894,7 @@ color: black;
 
 .BANNERMAIN3{
     background-color:var(--bg-black-main); 
-    /* height: 24em; */
+   
 
 }
 
@@ -815,6 +938,23 @@ footer{
     background:#6ca30f!important;
 }
 
+
+.btn-buy-ch{
+    border: none !important;
+    color: white !important;
+    font-weight: 500!important;
+    background:var(--main-color)!important;
+    width: 100%;
+    border-radius: 25px!important;
+}
+.btn-buy-ch:hover{
+    border: none !important;
+    color: white !important;
+    font-weight: 500!important;
+    background:black!important;
+    width: 100%;
+}
+
 .animate-up-3,
 .animate-right-3,
 .animate-down-3,
@@ -841,6 +981,10 @@ footer{
 
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
+    .container-iconos-checkout {
+        height: 2.5em;
+    }
+
     .footer h4{
         font-size:1.1em;
     }
@@ -857,6 +1001,43 @@ footer{
 
 
 @media (min-width: 768px) and (max-width: 992px) {
+    .carrito .btn-buy {
+        font-size: 1.1em!important; 
+    }
+    .btn-whatsapp-checkout {
+        font-size: 1.1em!important; 
+    }
+    .inputbox label {
+        font-size: 0.9em;
+    }
+    .checkout-lista p{
+        font-size: 0.9em ;
+    }
+    .tempo-container-checkout p{
+        font-size: 0.9em ;
+    }
+    .garantia-container-checkout p{
+        font-size: 0.85em ;
+    }
+    .checkout-sub {
+        font-size: 0.9em;
+    }
+    .carrito h4{
+        font-size:1.15em
+    }
+
+    .checkout-review{
+        font-size: 1.3em;       
+    }
+    .checkout-review-container{
+        font-size: 0.95em;
+    }
+    .iconos-checkout{
+        height: 9em;
+    }
+    .container-iconos-checkout {
+        height: 3em;
+    }
     #banner-timer h5, #banner-timer #temporizador{
         font-size: 1.2em;
         font-weight: 600;
@@ -886,7 +1067,7 @@ footer{
         font-size: 0.79em;
     }
     #header .title{
-        font-size:  1.8em;       
+        font-size:  1.99em;       
     }
     .bonus-description p {
         font-size: 0.84em;
@@ -902,9 +1083,7 @@ footer{
         width:571px; 
     }
 
-    /* .BANNERMAIN {
-        height: 16em;
-    } */
+
     .c {
         transform: translateY(20px);
     }
@@ -974,6 +1153,43 @@ footer{
     
 }
 @media (min-width: 992px) and (max-width: 1200px) {
+    .carrito .btn-buy {
+        font-size: 1.1em!important; 
+    }
+    .btn-whatsapp-checkout {
+        font-size: 1.1em!important; 
+    }
+    .inputbox label {
+        font-size: 0.9em;
+    }
+    .checkout-lista p{
+        font-size: 1em ;
+    }
+    .tempo-container-checkout p{
+        font-size: 1em ;
+    }
+    .garantia-container-checkout p{
+        font-size: 0.85em ;
+    }
+    .checkout-sub {
+        font-size: 0.9em;
+    }
+    .carrito h4{
+        font-size:1.5em
+    }
+    .checkout-review{
+        font-size: 1.3em;       
+    }
+    .checkout-review-container{
+        font-size: 0.95em;
+    }
+    .container-iconos-checkout{
+        height: 4em;
+    }
+
+    .iconos-checkout{
+        height:10em;
+    }
     #banner-timer h5, #banner-timer #temporizador{
         font-size: 1.2em;
         font-weight: 600;
@@ -1007,7 +1223,7 @@ footer{
 
     }
     .bonus-description p {
-        font-size: 0.84em;
+        font-size: 0.85em;
     }
 
      /* STICKY CARD */
@@ -1021,7 +1237,7 @@ footer{
     }
 
     .BANNERMAIN {
-        height: 20em;
+        height: 323px;
     }
     .c {
         transform: translateY(20px);
@@ -1045,10 +1261,10 @@ footer{
         font-size: 1.1em!important;
     }
     .title-card-sticky{
-        font-size: 0.9em;
+        font-size: 1em;
     }
     .sections p {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
     .garantia-container p {
         font-size: 0.7em;
@@ -1098,6 +1314,44 @@ footer{
 }
 
 @media screen and (min-width: 1200px) and  (max-width: 1400px){
+    .carrito .btn-buy {
+        font-size: 1.1em!important; 
+    }
+    .btn-whatsapp-checkout {
+        font-size: 1.1em!important; 
+    }
+    .inputbox label {
+        font-size: 0.9em;
+    }
+    .checkout-lista p{
+        font-size: 1em ;
+    }
+    .tempo-container-checkout p{
+        font-size: 1em ;
+    }
+    .garantia-container-checkout p{
+        font-size: 0.85em ;
+    }
+    .checkout-sub {
+        font-size: 0.9em;
+    }
+    .carrito h4{
+        font-size:1.5em
+    }
+    .checkout-review{
+        font-size: 1.5em;       
+    }
+    .checkout-review-container{
+        font-size: 1em;
+    }
+
+    .container-iconos-checkout{
+        height: 4em;
+    }
+
+    .iconos-checkout{
+        height:10.6em;
+    }
     #banner-timer h5, #banner-timer #temporizador{
         font-size: 1.3em;
         font-weight: 600;
@@ -1111,16 +1365,16 @@ footer{
     }
 
     .bonus-description h5{
-        font-size: 0.9em!important;
+        font-size: 1.1em!important;
     }
     .bonus-description h4{
-        font-size: 1.12em!important;
+        font-size: 1.3em!important;
     }
     .review-img {
            height: 6em;
     }
     .bonus-header p {
-        font-size: 0.89em;
+        font-size: 1em;
         margin-bottom: 0.8em;     
     }
 
@@ -1133,11 +1387,11 @@ footer{
         font-size: 0.9em;
     }
     #header .title{
-        font-size:  2em;
+        font-size:  2.2em;
        
     }
     .bonus-description p {
-        font-size: 0.84em;
+        font-size: 0.95em;
     }
 
      /* STICKY CARD */
@@ -1151,7 +1405,7 @@ footer{
     }
 
     .BANNERMAIN {
-        height: 20em;
+        height: 324px;
     }
     .c {
         transform: translateY(20px);
@@ -1163,22 +1417,22 @@ footer{
         font-size: 0.9em ;
     }
     .btn-price{
-        font-size: 0.9em!important;
+        font-size: 1em  !important;
     }
     .precio {      
-        font-size: 1.4em;        
+        font-size: 1.5em;        
     }
     .descuento{
-        font-size: 1.4em;
+        font-size: 1.5em; 
     }
     .btn-buy{
         font-size: 1.1em!important;
     }
     .title-card-sticky{
-        font-size: 0.9em;
+        font-size: 1em;
     }
     .sections p {
-        font-size: 0.8em;
+        font-size: 1em;
     }
     .garantia-container p {
         font-size: 0.7em;
@@ -1189,16 +1443,19 @@ footer{
     }
     /* DESCRIPTION SECTION */
     .descripcion-section h2, .bonus-header .title-section{
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
     .descripcion-section h4, .bonus-header h4{
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
     .descripcion-section p {
-        font-size: 0.9em;
+        font-size: 1em;
+    }
+    .review-bonus-p {
+        font-size: 0.89em!important;
     }
     .descripcion-section .items-list{
-        font-size: 0.89em!important;
+        font-size: 1em!important;
     }
     .footer .social-icons i{
         font-size:1.8em;
@@ -1227,6 +1484,26 @@ footer{
 }
 
 @media screen and (min-width: 1400px){
+    .review-bonus-p {
+        font-size: 0.89em!important;
+    }
+    .checkout-review-container .checkout-review{
+        font-size: 1.6em;       
+    }
+    .checkout-review-container p{
+        font-size: 1.3em;
+    }
+    
+    .container-iconos-checkout{
+        height: 4em;
+    }
+
+    .iconos-checkout{
+        height:10.6em;
+    }
+    .iconos-checkout p{
+        font-size:1em;
+    }
     #banner-timer h5, #banner-timer #temporizador{
         font-size: 1.3em;
         font-weight: 600;
@@ -1240,10 +1517,10 @@ footer{
     }
 
     .bonus-description h5{
-        font-size: 0.9em!important;
+        font-size: 1.15em!important;
     }
     .bonus-description h4{
-        font-size: 1.12em!important;
+        font-size: 1.3em!important;
     }
     .review-img {
            height: 6em;
@@ -1252,23 +1529,22 @@ footer{
         left:15%;
     }
     .bonus-header p {
-        font-size: 0.89em;
+        font-size: 1em;
         margin-bottom: 0.8em;     
     }
     #header p{
-        font-size: 1em;
-      
+        font-size: 1.1em;      
     }
 
     #header .small-p  ,.small-p{
-        font-size: 0.9em;
+        font-size: 0.95em;
     }
     #header .title{
-        font-size:  2.28em;
+        font-size:  2.35em;
        
     }
     .bonus-description p {
-        font-size: 0.84em;
+        font-size: 1em;
     }
 
      /* STICKY CARD */
@@ -1282,7 +1558,7 @@ footer{
     }
 
     .BANNERMAIN {
-        height: 20em;
+        height: 322px;
     }
     .c {
         transform: translateY(20px);
@@ -1306,13 +1582,13 @@ footer{
         font-size: 1.1em!important;
     }
     .title-card-sticky{
-        font-size: 0.9em;
+        font-size: 1em;
     }
     .sections p {
-        font-size: 0.84em;
+        font-size: 0.98em;
     }
     .garantia-container p {
-        font-size: 0.75em;
+        font-size: 0.85em;
     }
 
     .estudiantes {
@@ -1326,11 +1602,11 @@ footer{
         font-size: 1.8em;
     }
     .descripcion-section p {
-        font-size: 0.9em;
+        font-size: 1em;
     }
     
     .descripcion-section .items-list{
-        font-size: 0.89em!important;
+        font-size: 1em!important;
     }
 
     .footer .footer-links a {
@@ -1372,8 +1648,7 @@ footer{
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
-    /* height: 50px; */
+    width: 100%;    
     background-color: var(--bg-black-main); 
     color: #fff;
     z-index: 15;
@@ -1385,3 +1660,90 @@ footer{
     backdrop-filter: blur(20px);
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+.bg-form{
+    background: var(--main-color);
+    color: #fff;
+    border-radius: 5px;    
+}
+
+.inputbox{
+    position: relative;
+  }
+
+input{
+    border-radius: 4px;
+    border: 1px solid #bfbfbf;
+    color: black;
+    font-size: 0.9em!important;
+    padding:20px 10px 12px;
+
+}
+.input.border-gray {
+    border: 2px solid #ebeaed;
+}
+
+.inputbox  label{
+    position: absolute;
+    left: 0;
+    color: black;
+    padding: 20px 10px 12px;
+    transition: 0.5s;
+    font-weight: 500;
+    font-size: 0.9em;
+} 
+
+
+.inputbox input:focus ~ label
+{
+  color: var(--main-color);
+  transform: translateY(-17px);
+  font-size: 0.8em;
+
+}
+.inputbox .obligatorio{
+    color: red;
+    font-weight: 800;
+}
+
+
+
+.inputbox label.small {
+    color: var(--main-color);
+  transform: translateY(-17px);
+  font-size: 0.8em;
+}
+
+input.border-gray.error {
+    border-color: Red;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#hint a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.color-heading.link:hover {
+    color: #5d6a79;
+  }
+
+  .input.placeholder-heading::-moz-placeholder {
+    color: #919DAB;
+  }
+  .input.placeholder-heading::-webkit-input-placeholder {
+    color: #919DAB;
+  }
+  .input.placeholder-heading:-ms-input-placeholder {
+    color: #919DAB;
+  }
+
+
+
+  .tempo-checkout{
+    background-color: #fff8e0;
+  }
+
+
+
