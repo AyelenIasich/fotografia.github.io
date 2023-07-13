@@ -556,7 +556,9 @@ color: black;
 } 
 
 @media screen and (min-width: 320px) and (max-width:425px)   {
-
+    .btn-price{
+        font-size: 0.8em!important;
+    }
     .inputbox label {
         font-size: 0.9em;
     }
@@ -634,10 +636,10 @@ color: black;
         font-size: 0.8em;
     }
     #header .title{
-        font-size:  1.5em;
+        font-size:  1.25em;
     }
     #header .small-p, .small-p{
-        font-size: 0.7em;
+        font-size: 0.74em;
     }
 
     
